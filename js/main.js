@@ -489,7 +489,6 @@ if(!filtercategoryone){} else {
     for (var i = 0; i < pitem.length; i++) {
       pitem[i].classList.remove('animate');
       pitem[i].setAttribute("style", "display:none");
-      document.querySelector('.projects__item_first').classList.add('animate');
     }
     let projects = document.querySelectorAll('.projects__item');
     function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
@@ -584,7 +583,6 @@ if(!filtercategorytwo){} else {
         //     pitem[i].classList.remove('animate');
         //     pitem[i].setAttribute("style", "display:none");
         //   }
-        //   document.querySelector('.projects__item_first').classList.add('animate');
         //   setTimeout(() => {
         //     function onEntryp(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
         //     let projectaopt = {threshold: [0.5] };
