@@ -3622,7 +3622,7 @@ video {
 
 .filter__category.selected .filter__form {
   max-height: 1000px;
-  padding: 20px 100px;
+  padding: 20px;
   border-bottom: 1px solid var(--gray-border);
   z-index: 11;
 }
@@ -3819,6 +3819,10 @@ video {
 
 .projects__container {
   max-width: 1210px;
+}
+
+.projects__list_filter {
+  width: 100%;
 }
 
 .projects__list {
