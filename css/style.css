@@ -3638,6 +3638,7 @@ video {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 .preloader__top {
   position: absolute;
@@ -3664,6 +3665,7 @@ video {
   left: 0;
   right: 0;
   margin: auto;
+  z-index: 1001;
 }
 
 .preloader__progress_inner {
