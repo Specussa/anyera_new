@@ -942,7 +942,7 @@
         document.body.style.overflow = "visible";
         document.body.style.height = "100%";
         setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
-        setTimeout(() => {document.querySelector('.preloader__progress_inner').style.display = "none"}, 0);
+        setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
         document.body.classList.add('loaded');
         $.scrollify({
           section: '.scrollify',
