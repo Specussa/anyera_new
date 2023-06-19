@@ -351,6 +351,7 @@
   </div>
   <script src="js/jquery.js"></script>
   <script src="js/TweenMax.js"></script>
+  <script src="js/scrollify.js"></script>
   <script>
     $(function(){
       var tl = new TimelineMax();
@@ -359,39 +360,37 @@
         TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
         document.body.style.overflow = "visible";
         document.body.style.height = "100%";
+        setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
         document.body.classList.add('loaded');
+        $.scrollify({
+          section: '.scrollify',
+          easing: 'swing',
+          scrollSpeed: 600,
+          updateHash: false,
+          afterRender: function () {
+            var pagenation = '<ul class="main__dots">';
+            // $('.scrollify').each(function (i) {
+            //   pagenation += '<li><a></a></li>';
+            // });
+            pagenation += '</ul>';
+            $('.main').append(pagenation);
+            $('.main__dots a').each(function (i) {
+              $(this).on('click', function () {
+                $.scrollify.move(i);
+              });
+            });
+            $('.main__dots li:first-child').find('a').addClass('active');
+          },
+          before: function (i) {
+            $('.main__dots .active').removeClass('active');
+            $('.main__dots').find('a').eq(i).addClass('active');
+          }});
       }})
         .to('.preloader__top', 1, {top: '-50%'})
         .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
         document.body.style.overflow = "hidden";
         document.body.style.height = "100vh";
     })
-  </script>
-  <script src="js/scrollify.js"></script>
-  <script id="rendered-js">
-    $.scrollify({
-      section: '.scrollify',
-      easing: 'swing',
-      scrollSpeed: 600,
-      updateHash: false,
-      afterRender: function () {
-        var pagenation = '<ul class="main__dots">';
-        // $('.scrollify').each(function (i) {
-        //   pagenation += '<li><a></a></li>';
-        // });
-        pagenation += '</ul>';
-        $('.main').append(pagenation);
-        $('.main__dots a').each(function (i) {
-          $(this).on('click', function () {
-            $.scrollify.move(i);
-          });
-        });
-        $('.main__dots li:first-child').find('a').addClass('active');
-      },
-      before: function (i) {
-        $('.main__dots .active').removeClass('active');
-        $('.main__dots').find('a').eq(i).addClass('active');
-      }});
   </script>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
