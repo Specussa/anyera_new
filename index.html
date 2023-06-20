@@ -258,7 +258,7 @@
     <li><a class=""><span>KEYS</span></a></li>
     <li><a class=""><span>FOOTER</span></a></li>
   </ul>
-  <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="">
+  <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="" id="top">
     <div class="main__section">
       <div class="main__border"></div>
       <section class="digital">
@@ -905,10 +905,10 @@
             </div>
             <div class="footer__info_right">
               <a href="policy.html" class="footer__privacy">Политика конфиденциальности</a>
-              <button onclick="document.location='#'" class="button__project footer__button">
-                <span class="button__text">В начало</span>
-                <span class="button__hover"></span>
-              </button>
+                <a data-scroll-to href="#top" class="button__project footer__button">
+                  <span class="button__text">В начало</span>
+                  <span class="button__hover"></span>
+                </a>
             </div>
           </div>
         </div>
@@ -954,8 +954,7 @@
         window.scrollTo(0,0);
     })
   </script>
-<script id="rendered-js">
-
+<script>
 const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true });
