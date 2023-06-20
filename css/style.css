@@ -2497,6 +2497,10 @@ video {
 
 /* start digital */
 
+.digital {
+  padding: 0 0 153px;
+}
+
 .digital__info {
   display: -webkit-box;
   display: -ms-flexbox;
