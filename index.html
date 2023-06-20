@@ -14,13 +14,13 @@
   <script>window.console = window.console || function(t) {};</script>
 </head>
 <body>
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="preloader__top"></div>
     <div class="preloader__bottom"></div>
   </div>
   <div class="preloader__progress">
     <div class="preloader__progress_inner"></div>
-  </div>
+  </div> -->
   <header class="header">
     <div class="overlay"></div>
     <div class="container header__container">
@@ -252,16 +252,18 @@
       </div>
     </div>
   </header>
-  <ul class="main__dots">
-    <li><a class="active"><span>FUTURE</span></a></li>
-    <li><a class=""><span>SERVICES</span></a></li>
-    <li><a class=""><span>KEYS</span></a></li>
-    <li><a class=""><span>FOOTER</span></a></li>
-  </ul>
   <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="" id="top">
+    <div class="main__dots" data-scroll data-scroll-sticky data-scroll-target="#top">
+      <ul class="main__dots_list">
+        <li><a data-scroll-to href="#future__dot"><span>FUTURE</span></a></li>
+        <li><a data-scroll-to href="#services__dot"><span>SERVICES</span></a></li>
+        <li><a data-scroll-to href="#keys__dot"><span>KEYS</span></a></li>
+        <li><a data-scroll-to href="#footer__dot"><span>FOOTER</span></a></li>
+      </ul>
+    </div>
     <div class="main__section">
       <div class="main__border"></div>
-      <section class="digital">
+      <section class="digital" id="future__dot">
         <div class="container digital__container">
           <div class="digital__info">
             <h1 class="digital__head">
@@ -290,7 +292,7 @@
           </ul>
         </div>
       </section>
-      <section class="services">
+      <section class="services" id="services__dot">
         <div class="container services__container">
           <ul class="services__list">
             <li class="services__item">
@@ -325,7 +327,7 @@
           </ul>
         </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="keys__dot">
         <div class="container projects__container">
           <div class="projects__list_filter">
             <ul class="projects__block_list">
@@ -869,7 +871,7 @@
         </div>
       </section>
     </div>
-    <footer class="footer">
+    <footer class="footer" id="footer__dot">
       <div class="container footer__container">
         <div class="footer__production">
           <div class="footer__navigation">
@@ -935,30 +937,25 @@
   <script src="js/TweenMax.js"></script>
   <script src="js/scroll.js"></script>
   <script>
-    // document.body.classList.add('loaded');
-    $(function(){
-      var tl = new TimelineMax();
-      tl.to('.preloader__progress_inner', 0.5, {width: '100%', ease: Quad.easeIn})
-        .to('.preloader__progress', 1, {width: '100%', onComplete: function(){
-        TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
-        document.body.style.overflow = "visible";
-        document.body.style.height = "100%";
-        setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
-        setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
-        document.body.classList.add('loaded');
-      }})
-        .to('.preloader__top', 1, {top: '-50%'})
-        .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
-        document.body.style.overflow = "hidden";
-        document.body.style.height = "100vh";
-        window.scrollTo(0,0);
-    })
+    document.body.classList.add('loaded');
+    // $(function(){
+    //   var tl = new TimelineMax();
+    //   tl.to('.preloader__progress_inner', 0.5, {width: '100%', ease: Quad.easeIn})
+    //     .to('.preloader__progress', 1, {width: '100%', onComplete: function(){
+    //     TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
+    //     document.body.style.overflow = "visible";
+    //     document.body.style.height = "100%";
+    //     setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
+    //     setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
+    //     document.body.classList.add('loaded');
+    //   }})
+    //     .to('.preloader__top', 1, {top: '-50%'})
+    //     .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
+    //     document.body.style.overflow = "hidden";
+    //     document.body.style.height = "100vh";
+    //     window.scrollTo(0,0);
+    // })
   </script>
-<script>
-const scroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true });
-//# sourceURL=pen.js
-</script>
+<script>const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true });</script>
 </body>
 </html>

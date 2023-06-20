@@ -1494,17 +1494,26 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1px;
   position: fixed;
-  right: 30px;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.main__dots_list {
+  position: absolute;
   top: 50%;
+  right: 30px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 99;
 }
 
 .main__dots li {
@@ -4334,8 +4343,7 @@ video {
 
 /* end projects */
 
-/* start cursor */
-/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+/* start scroll */
 
 html.has-scroll-smooth {
   overflow: hidden
@@ -4420,4 +4428,4 @@ html.has-scroll-dragging {
   right: auto
 }
 
-/* end cursor */
+/* end scroll */
