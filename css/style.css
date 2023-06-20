@@ -1537,7 +1537,7 @@ svg path {
 .main__dots a.active::after, .main__dots a:hover::after {
   width: 10px;
   height: 10px;
-  background-color: #644BB1;
+  background-color: var(--purple);
   border-radius: 50%;
 }
 
@@ -3676,8 +3676,9 @@ video {
   top: 0;
   width: 100%;
   height: 50%;
-  background-color: #000;
   z-index: 1001;
+  background-color: #000;
+  transition: top 0.3s linear;
 }
 
 .preloader__bottom {
@@ -3685,30 +3686,63 @@ video {
   top: 50%;
   width: 100%;
   height: 50%;
-  background-color: #000;
   z-index: 1001;
+  background-color: #000;
+  transition: top 0.3s linear;
 }
 
-.preloader__progress {
-  position: fixed;
-  width: 200px;
-  height: 3px;
+.preloader__image {
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: #333;
-  left: 0;
-  right: 0;
-  margin: auto;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  -webkit-animation: preloader-rotate 1s infinite linear;
+  -moz-animation: preloader-rotate 1s infinite linear;
+  -ms-animation: preloader-rotate 1s infinite linear;
+  -o-animation: preloader-rotate 1s infinite linear;
+  animation: preloader-rotate 1s infinite linear;
   z-index: 1002;
 }
 
-.preloader__progress_inner {
-  width: 100%;
-  background-color: #ffffff;
-  position: absolute;
-  width: 0;
-  height: 100%;
-  left: 0;
+.loaded_hiding .preloader__image {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.preloader__image {
+  fill: var(--page-text);
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loaded .preloader {
+  display: none;
 }
 
 /* end preloader */

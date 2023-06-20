@@ -16,10 +16,18 @@
 <body>
   <div class="preloader">
     <div class="preloader__top"></div>
+    <svg class="preloader__image" role="img" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="2.5" cy="12.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="2.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="12.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="22.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="22.5" cy="12.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="12.5" cy="12.5" r="2.5" fill="#644BB1"/>
+      <circle cx="12.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+      <circle cx="22.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+      </svg>
     <div class="preloader__bottom"></div>
-  </div>
-  <div class="preloader__progress">
-    <div class="preloader__progress_inner"></div>
   </div>
   <header class="header">
     <div class="overlay"></div>
@@ -933,28 +941,20 @@
   <span class="c-scrollbar"><span class="c-scrollbar_thumb"></span></span>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
-  <script src="js/jquery.js"></script>
   <script src="js/TweenMax.js"></script>
   <script src="js/scroll.js"></script>
   <script>
-    // document.body.classList.add('loaded');
-    $(function(){
-      var tl = new TimelineMax();
-      tl.to('.preloader__progress_inner', 0.5, {width: '100%', ease: Quad.easeIn})
-        .to('.preloader__progress', 1, {width: '100%', onComplete: function(){
-        TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
-        document.body.style.overflow = "visible";
-        document.body.style.height = "100%";
-        setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
-        setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
+    window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      document.querySelector('.preloader__top').style.top = "-50%";
+      document.querySelector('.preloader__bottom').style.top = "100%";
+      window.scrollTo(0,0);
+      window.setTimeout(function () {
         document.body.classList.add('loaded');
-      }})
-        .to('.preloader__top', 1, {top: '-50%'})
-        .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
-        document.body.style.overflow = "hidden";
-        document.body.style.height = "100vh";
-        window.scrollTo(0,0);
-    })
+        document.body.classList.remove('loaded_hiding');
+        document.querySelector('.preloader').style.display = "none";
+      }, 300);
+    }
   </script>
 <script>const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true });</script>
 </body>
