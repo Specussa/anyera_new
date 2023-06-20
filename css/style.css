@@ -1751,6 +1751,9 @@ svg path {
   color: var(--page-text);
   background: #644BB1;
   clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 0);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 10px;
   -webkit-transition: opacity 0.1s linear;
   -moz-transition: opacity 0.1s linear;
   -ms-transition: opacity 0.1s linear;
