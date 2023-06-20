@@ -1261,7 +1261,7 @@ document.addEventListener('DOMContentLoaded', function(){
     for (let elm of digitalinfo) {digitalserv.observe(elm);}
     const digitalhead = document.querySelectorAll('.digital__head_block'); 
     [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-    setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "1200");
+    setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "300");
   }
   let services = document.querySelector('.services');
   let servicess = document.querySelectorAll('.services__list');

@@ -3700,11 +3700,11 @@ video {
   margin-top: -35px;
   margin-left: -35px;
   text-align: center;
-  -webkit-animation: preloader-rotate 1s infinite linear;
-  -moz-animation: preloader-rotate 1s infinite linear;
-  -ms-animation: preloader-rotate 1s infinite linear;
-  -o-animation: preloader-rotate 1s infinite linear;
-  animation: preloader-rotate 1s infinite linear;
+  -webkit-animation: preloader-rotate 2s infinite linear;
+  -moz-animation: preloader-rotate 2s infinite linear;
+  -ms-animation: preloader-rotate 2s infinite linear;
+  -o-animation: preloader-rotate 2s infinite linear;
+  animation: preloader-rotate 2s infinite linear;
   z-index: 1002;
 }
 
