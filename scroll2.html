@@ -259,10 +259,10 @@
     <li><a class=""><span>FOOTER</span></a></li>
   </ul>
   <div class="wrapper">
-    <main class="main">
+    <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="">
       <div class="main__section">
       <div class="main__border"></div>
-      <section class="digital scrollify">
+      <section class="digital">
         <div class="container digital__container">
           <div class="digital__info">
             <h1 class="digital__head">
@@ -304,7 +304,7 @@
           </ul>
         </div>
       </section>
-      <section class="services scrollify">
+      <section class="services">
         <div class="container services__container">
           <ul class="services__list">
             <li class="services__item">
@@ -339,7 +339,7 @@
           </ul>
         </div>
       </section>
-      <section class="projects scrollify">
+      <section class="projects">
         <div class="container projects__container">
           <div class="projects__list_filter">
             <ul class="projects__block_list">
@@ -883,8 +883,7 @@
         </div>
       </section>
     </div>
-    </main>
-    <footer class="footer scrollify">
+    <footer class="footer">
       <div class="container footer__container">
         <div class="footer__production">
           <div class="footer__navigation">
@@ -929,13 +928,15 @@
         </div>
       </div>
     </footer>
-    <div class="smooth-scrollbar"></div>
+    </main>
+    <!-- <div class="smooth-scrollbar"></div> -->
   </div>
+  <span class="c-scrollbar"><span class="c-scrollbar_thumb"></span></span>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/TweenMax.js"></script>
-  <script src="js/scrollify.js"></script>
+  <script src="js/scroll.js"></script>
   <script>
     document.body.classList.add('loaded');
     // $(function(){
@@ -948,29 +949,6 @@
     //     setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
     //     setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
     //     document.body.classList.add('loaded');
-        $.scrollify({
-          section: '.scrollify',
-          easing: 'swing',
-          scrollSpeed: 600,
-          updateHash: false,
-          afterRender: function () {
-            var pagenation = '<ul class="main__dots">';
-            // $('.scrollify').each(function (i) {
-            //   pagenation += '<li><a></a></li>';
-            // });
-            pagenation += '</ul>';
-            $('.main__section').append(pagenation);
-            $('.main__dots a').each(function (i) {
-              $(this).on('click', function () {
-                $.scrollify.move(i);
-              });
-            });
-            $('.main__dots li:first-child').find('a').addClass('active');
-          },
-          before: function (i) {
-            $('.main__dots .active').removeClass('active');
-            $('.main__dots').find('a').eq(i).addClass('active');
-          }});
     //   }})
     //     .to('.preloader__top', 1, {top: '-50%'})
     //     .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
@@ -979,7 +957,7 @@
     //     window.scrollTo(0,0);
     // })
   </script>
-  <script>
+  <!-- <script>
     const smoothCoef = 0.05;
     const smoothScroll = document.querySelector(".wrapper");
     const smoothScrollBar = document.querySelector(".smooth-scrollbar");
@@ -1002,6 +980,13 @@
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
-  </script>
+  </script> -->
+<script id="rendered-js">
+
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true });
+//# sourceURL=pen.js
+</script>
 </body>
 </html>

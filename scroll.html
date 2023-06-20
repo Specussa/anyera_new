@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;800&display=swap" rel="stylesheet">
+  <script>window.console = window.console || function(t) {};</script>
+  <style>
+    /* scrollify.jsに関係する記述はここかから */
+    .scrollify{
+      width: 100%;
+      height: 100vh;
+    }
+
+    .section01{
+      background-color: #ff7575;
+    }
+
+    .section02{
+      background-color: #75ff75;
+    }
+
+    .section03{
+      background-color: #ffff75;
+    }
+
+    .section04{
+      background-color: #75baff;
+    }
+
+    .page_wrap{
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .page_wrap li{
+      margin-bottom: 20px;
+    }
+
+    .page_wrap a{
+      border: 1px solid #000;
+      border-radius: 50%;
+      display: block;
+      width: 10px;
+      height: 10px;
+    }
+    .page_wrap a.active{
+      background: #000;
+    }
+  </style>
+</head>
+<header class="header">
+  <div class="overlay"></div>
+  <div class="container header__container">
+    <button class="header__burger" aria-label="Открыть меню">
+      <span>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="2.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="2.5" cy="12.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="2.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="12.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="22.5" cy="2.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="22.5" cy="12.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="12.5" cy="12.5" r="2.5" fill="#644BB1"/>
+          <circle cx="12.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+          <circle cx="22.5" cy="22.5" r="2.5" fill="#D9D9D9"/>
+        </svg>
+      </span>
+      <span>MENU</span>
+    </button>
+    <a class="header__name" href="index.html">
+      <p class="header__name_head">ANYERA</p>
+      <p class="header__name_desc">DIGITAL &amp; DESIGN TEAM</p>
+    </a>
+    <button class="button__project header__project">
+      <span class="button__text">BRIEFING</span>
+      <span class="button__hover"></span>
+    </button>
+    <div class="header__nav">
+      <div class="container header__nav_container">
+        <div class="block__left header__nav_left"></div>
+        <div class="header__nav_block">
+          <div class="header__nav_info">
+            <ul class="header__nav_list">
+              <li class="header__nav_item">
+                <a href="index.html" class="header__nav_link">ГЛАВНАЯ</a>
+              </li>
+              <li class="header__nav_item">
+                <a href="projects.html" class="header__nav_link">ПРОЕКТЫ</a>
+                <ul class="header__subnav_list">
+                  <li class="header__subnav_item"><a href="projects.html" class="header__subnav_link">Проект 1</a></li>
+                  <li class="header__subnav_item"><a href="projects.html" class="header__subnav_link">Проект 2</a></li>
+                  <li class="header__subnav_item"><a href="projects.html" class="header__subnav_link">Проект 3</a></li>
+                  <li class="header__subnav_item"><a href="projects.html" class="header__subnav_link">Проект 4</a></li>
+                </ul>
+              </li>
+              <li class="header__nav_item">
+                <a href="services.html" class="header__nav_link">УСЛУГИ</a>
+                <ul class="header__subnav_list">
+                  <li class="header__subnav_item"><a href="services.html" class="header__subnav_link">Аналитика</a></li>
+                  <li class="header__subnav_item"><a href="services.html" class="header__subnav_link">Дизайн</a></li>
+                  <li class="header__subnav_item"><a href="services.html" class="header__subnav_link">Веб-разработка</a></li>
+                  <li class="header__subnav_item"><a href="services.html" class="header__subnav_link">Поддержка и развитие</a></li>
+                  <li class="header__subnav_item"><a href="services.html" class="header__subnav_link">Автоматизация</a></li>
+                </ul>
+              </li>
+              <li class="header__nav_item">
+                <a href="team.html" class="header__nav_link">КОМАНДА</a>
+                <ul class="header__subnav_list">
+                  <li class="header__subnav_item"><a href="career.html" class="header__subnav_link">О нас</a></li>
+                  <li class="header__subnav_item"><a href="career.html" class="header__subnav_link">Карьера</a></li>
+                  <li class="header__subnav_item"><a href="career.html" class="header__subnav_link">Сертификаты</a></li>
+                </ul>
+              </li>
+              <li class="header__nav_item">
+                <a href="public.html" class="header__nav_link">ПУБЛИКАЦИИ</a>
+                <ul class="header__subnav_list">
+                  <li class="header__subnav_item"><a href="publication.html" class="header__subnav_link">Публикация 1</a></li>
+                  <li class="header__subnav_item"><a href="publication.html" class="header__subnav_link">Публикация 2</a></li>
+                  <li class="header__subnav_item"><a href="publication.html" class="header__subnav_link">Публикация 3</a></li>
+                  <li class="header__subnav_item"><a href="publication.html" class="header__subnav_link">Публикация 4</a></li>
+                </ul>
+              </li>
+              <li class="header__nav_item">
+                <a href="contacts.html" class="header__nav_link">КОНТАКТЫ</a>
+              </li>
+            </ul>
+            <ul class="header__nav__contact_list">
+              <li class="header__nav_contact_item">
+                <p class="header__nav_contact_desc">Телефон для связи:</p>
+                <a href="tel:+79270030100" class="header__nav_contact_link">8 927 003 01 00</a>
+              </li>
+              <li class="header__nav_contact_item">
+                <p class="header__nav_contact_desc">По вопросам сотрудничества:</p>
+                <a href="mailto:hello@anyera.ru" class="header__nav_contact_link">HELLO@ANYERA.RU</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header__nav_bottom">
+            <div class="header__nav_bottom_icons">
+              <button class="header__nav_bottom_icon button__dark">
+                <svg width="33" height="36" viewBox="0 0 33 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M26.5833 5.8165L22.3667 9.04984L23.8833 14.1498L19.5 11.1332L15.1167 14.1498L16.6333 9.04984L12.4167 5.8165L17.7333 5.6665L19.5 0.666504L21.2667 5.6665L26.5833 5.8165ZM32.4167 17.3332L29.6833 19.4165L30.6667 22.7165L27.8333 20.7665L25 22.7165L25.9833 19.4165L23.25 17.3332L26.6833 17.2498L27.8333 13.9998L28.9833 17.2498L32.4167 17.3332ZM28.6167 25.5832C30 25.4498 31.4833 27.4165 30.6 28.6665C30.0667 29.4165 29.5 30.1165 28.8 30.7832C22.2833 37.3332 11.7333 37.3332 5.23333 30.7832C-1.28334 24.2832 -1.28334 13.7165 5.23333 7.2165C5.89999 6.54984 6.59999 5.94984 7.34999 5.4165C8.59999 4.53317 10.5667 6.0165 10.4333 7.39984C9.98333 12.1665 11.5833 17.1165 15.25 20.7665C18.9 24.4332 23.8333 26.0332 28.6167 25.5832ZM25.8833 28.9498C21.1667 28.6832 16.5 26.7332 12.8833 23.1665C9.26666 19.5165 7.33333 14.8332 7.06666 10.1332C2.38333 15.3665 2.56666 23.3998 7.58332 28.4332C12.6167 33.4498 20.65 33.6332 25.8833 28.9498Z" fill="#D3D3D3"/>
+                </svg>
+              </button>
+              <button class="header__nav_bottom_icon button__light">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.91666 30.8165L7.26666 33.1665L10.2667 30.1832L7.89999 27.8165M19 8.99984C13.4833 8.99984 8.99999 13.4832 8.99999 18.9998C8.99999 24.5165 13.4833 28.9998 19 28.9998C24.5167 28.9998 29 24.5165 29 18.9998C29 13.4665 24.5167 8.99984 19 8.99984ZM32.3333 20.6665H37.3333V17.3332H32.3333M27.7333 30.1832L30.7333 33.1665L33.0833 30.8165L30.1 27.8165M33.0833 7.33317L30.7333 4.99984L27.7333 7.98317L30.1 10.3498M20.6667 0.666504H17.3333V5.6665H20.6667M10.2667 7.98317L7.26666 4.99984L4.91666 7.33317L7.89999 10.3498L10.2667 7.98317ZM0.666656 20.6665H5.66666V17.3332H0.666656M20.6667 32.3332H17.3333V37.3332H20.6667" fill="#D3D3D3"/>
+                </svg>
+              </button>
+            </div>
+            <div class="header__nav_bottom_socials">
+              <p class="header__nav_bottom_head">Мы в социальных сетях:</p>
+              <div class="header__nav_bottom_social">
+                <a href="https://t.me/anyera" target="_blank" class="header__nav_bottom_link">telegram</a>
+                <a href="https://vk.com/anyera" target="_blank" class="header__nav_bottom_link">vkontakte</a>
+                <a href="https://www.behance.net/anyera" target="_blank" class="header__nav_bottom_link">Behance</a>
+                <a href="#" target="_blank" class="header__nav_bottom_link">Dribble</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block__right header__nav_right"></div>
+      </div>
+    </div>
+    <div class="header__consultation">
+      <div class="container header__consultation_container">
+        <div class="block__left header__consultation_left"></div>
+        <div class="header__consultation_blocks">
+          <div class="header__consultation_burger_flex">
+            <button class="button__close header__consultation_burger" aria-label="Закрыть меню">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5882 24L0 1.41176L1.41176 0L24 22.5882L22.5882 24Z" fill="#262626"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 1.41178L1.41176 24L0 22.5883L22.5882 0L24 1.41178Z" fill="#262626"/>
+              </svg>
+            </button>
+          </div>
+          <div class="header__consultation_block">
+            <div class="header__consultation_info">
+              <div class="header__consultation_say">
+                <p class="header__consultation_head">Расскажите<br>о вашем проекте</p>
+                <p class="header__consultation_desc">Опишите свою задачу и мы свяжемся с вами в кратчайшие сроки.</p>
+              </div>
+              <div class="header__consultation_contacts">
+                <a href="tel:+79270030100" class="header__consultation_tel">8 927 003 01 00</a>
+                <a href="mailto:hello@anyera.ru" class="header__consultation_mail">info@visualhearts.ru</a>
+              </div>
+            </div>
+            <form id="form" class="header__forms_form">
+              <div class="header__forms_form_controls">
+                <div class="header__forms_form_control">
+                  <input class="header__forms_form_input" type="text" minlength="4" maxlength="40" placeholder="Имя" id="username" />
+                  <span class="header__forms_form_bar"></span>
+                  <small>Error message</small>
+                </div>
+                <div class="header__forms_form_control">
+                  <input class="header__forms_form_input" type="tel" minlength="5" maxlength="20" placeholder="Телефон" id="phone" />
+                  <span class="header__forms_form_bar"></span>
+                  <small>Error message</small>
+                </div>
+                <div class="header__select_box">
+                  <span class="header__select_name">Способ связи</span>
+                  <div class="header__select" data-select>
+                    <div class="header__select_selected_item" data-select-action data-select-open>
+                      <div class="header__select_selected-title" data-select-title>
+                        Выберите способ
+                      </div>
+                      <svg class="header__select_arrow" data-select-arrow width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L6.05 6L1 1"/>
+                      </svg>
+                    </div>
+                    <div class="header__select_list" data-select-list>
+                      <div class="header__select_list_item" data-select-action data-select-item>Позвонить</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Написать на почту</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Написать в телеграм</div>
+                    </div>
+                    <input class="header__select_input" type="text" data-select-input>
+                  </div>
+                </div>
+                <div class="header__select_box">
+                  <span class="header__select_name">Бюджет проекта</span>
+                  <div class="header__select" data-select>
+                    <div class="header__select_selected_item" data-select-action data-select-open>
+                      <div class="header__select_selected-title" data-select-title>
+                        Выберите бюджет
+                      </div>
+                      <svg class="header__select_arrow" data-select-arrow width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L6.05 6L1 1" stroke="#262626"/>
+                      </svg>
+                    </div>
+                    <div class="header__select_list" data-select-list>
+                      <div class="header__select_list_item" data-select-action data-select-item>от 50 до 150</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>от 150 до 500</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>от 500 до 1 млн</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>от 1 млн</div>
+                    </div>
+                    <input class="header__select_input" type="text" data-select-input>
+                  </div>
+                </div>
+                <div class="header__select_box">
+                  <span class="header__select_name">Тип услуги</span>
+                  <div class="header__select" data-select>
+                    <div class="header__select_selected_item" data-select-action data-select-open>
+                      <div class="header__select_selected-title" data-select-title>
+                        Выберите тип
+                      </div>
+                      <svg class="header__select_arrow" data-select-arrow width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L6.05 6L1 1" stroke="#262626"/>
+                      </svg>
+                    </div>
+                    <div class="header__select_list" data-select-list>
+                      <div class="header__select_list_item" data-select-action data-select-item>Одностраничный сайт</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Многостраничный сайт</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Нужен интернет-магазин</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Веб-приложение</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Дизайн</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Иллюстрации</div>
+                      <div class="header__select_list_item" data-select-action data-select-item>Другое</div>
+                    </div>
+                    <input class="header__select_input" type="text" data-select-input>
+                  </div>
+                </div>
+                <div class="header__forms_form_control">
+                  <span class="header__form_name">Опишите проект</span>
+                  <textarea class="header__forms_form_input header__forms_form_textarea" name="" id="text" placeholder=""></textarea>
+                  <span class="header__forms_form_bar"></span>
+                  <small>Error message</small>
+                </div>
+              </div>
+              <div class="button__project button__project_input header__form_button">
+                <input type="submit" name="submit" value="Отправить" class="button__text">
+                <span class="button__hover"></span>
+              </div>
+              <p class="header__form_policy">Нажимая на кнопку, вы соглашаетесь с условиями <a href="#">политики конфиденциальности</a>.</p>
+            </form>
+          </div>
+        </div>
+        <div class="block__right header__consultation_right"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<body translate="no">
+  <div class="wrapper">
+    <main class="main">
+  <div class="main__section">
+
+    <section class="digital scrollify">
+      <div class="container digital__container">
+        <div class="digital__info">
+          <h1 class="digital__head">
+            <span class="digital__head_block"><span>Y</span><span>O</span><span>U</span> <span>W</span><span>E</span><span>B</span><span>-</span><span>S</span><span>I</span><span>T</span><span>E</span> <span>I</span><span>N</span></span>
+            <span class="digital__head_block"><span>F</span><span>U</span><span>T</span><span>U</span><span>R</span><span>E</span></span>
+          </h1>
+          <h2 class="digital__desc">
+            We will develop you a modern website that will delight you for a long time and bring profit to your company.
+          </h2>
+          <button class="button__project showreel__button">
+            <span class="button__text">SHOWREEL</span>
+            <span class="button__hover"></span>
+          </button>
+          <div class="showreel__modal">
+            <div class="showreel__modal_inner">
+              <div class="showreel__video_responsive">
+                <video id="showreel__video" src="https://player.vimeo.com/external/194837908.sd.mp4?s=c350076905b78c67f74d7ee39fdb4fef01d12420&profile_id=164" data-overlay="1" data-title="ANYERA"></video>
+              </div>
+              <button class="button__close showreel__modal_close" aria-label="Закрыть видео">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5882 24L0 1.41176L1.41176 0L24 22.5882L22.5882 24Z" fill="#262626"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M24 1.41178L1.41176 24L0 22.5883L22.5882 0L24 1.41178Z" fill="#262626"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container accredited__container">
+        <ul class="accredited__list">
+          <li class="accredited__item">
+            <p class="accredited__head">Accredited IT company</p>
+            <p class="accredited__desc">The Ministry of Digital Development of the Russian Federation confirms that we are a reliable contractor.</p>
+          </li>
+          <li class="accredited__item">
+            <p class="accredited__head">Bitrix Partner</p>
+            <p class="accredited__desc">We are officially a partner of Bitrix and provide licenses for your sites.</p>
+          </li>
+        </ul>
+      </div>
+      <div>Once upon a time,<br>Cinderella had a step-mother and two step-sisters move into her house.<br>Each of them was cruel, and every day they did mean things to Cinderella.<br><br>One day, an invitation to a ball was delivered.<br>“You have to stay home!”<br>said her step-mother and step-sisters as they left.<br><br>As Cinderella was left crying, her Fairy Godmother appeared<br>and said, “I am going to help you.”<br>With a sparkle of her magic wand<br><br>a beautiful dress and a pumpkin carriage appeared!<br>“This magic will only last until midnight,” said the Fairy Godmother,<br><br>lastly giving her a pair of glass slippers.<br><br>When Cinderella arrived at the castle,<br>a handsome prince came up to her<br>and asked, “May I have this dance?”<br>The two of them were getting along wonderfully,<br><br>when “Bong!”<br>The clock struck midnight!<br><br>Cinderella rushed away to get home,<br>but lost one of her glass slippers on the stairs.<br><br>The next day, a servant from the castle came to the house.<br>“The Prince will marry whoever owns this glass slipper.”<br><br>“It’s mine! It’s mine!”<br>lied the two step-sisters.<br>But their feet were too big to fit!<br><br>Cinderella, of course, was a perfect fit.<br><br>Cinderella married the Prince<br>and they had a wonderful life together,<br>living happily ever after.</div>
+    </section>
+    <section class="section01 scrollify">
+      <div class="title">SECTION01</div>
+      <div class="content">Once upon a time,<br>Cinderella had a step-mother and two step-sisters move into her house.<br>Each of them was cruel, and every day they did mean things to Cinderella.<br><br>One day, an invitation to a ball was delivered.<br>“You have to stay home!”<br>said her step-mother and step-sisters as they left.<br><br>As Cinderella was left crying, her Fairy Godmother appeared<br>and said, “I am going to help you.”<br>With a sparkle of her magic wand<br><br>a beautiful dress and a pumpkin carriage appeared!<br>“This magic will only last until midnight,” said the Fairy Godmother,<br><br>lastly giving her a pair of glass slippers.<br><br>When Cinderella arrived at the castle,<br>a handsome prince came up to her<br>and asked, “May I have this dance?”<br>The two of them were getting along wonderfully,<br><br>when “Bong!”<br>The clock struck midnight!<br><br>Cinderella rushed away to get home,<br>but lost one of her glass slippers on the stairs.<br><br>The next day, a servant from the castle came to the house.<br>“The Prince will marry whoever owns this glass slipper.”<br><br>“It’s mine! It’s mine!”<br>lied the two step-sisters.<br>But their feet were too big to fit!<br><br>Cinderella, of course, was a perfect fit.<br><br>Cinderella married the Prince<br>and they had a wonderful life together,<br>living happily ever after.
+      </div>
+    </section>
+  
+    <section class="section02 scrollify">
+      <div class="title">SECTION02</div>
+    </section>
+  
+    <section class="section03 scrollify">
+      <div class="title">SECTION03</div>
+    </section>
+  
+    <section class="section04 scrollify">
+      <div class="title">SECTION04</div>
+    </section>
+    
+  <ul class="page_wrap"><li><a class="active"></a></li><li><a></a></li><li><a></a></li><li><a></a></li></ul>
+  </div>
+</main>
+<footer class="footer scrollify">
+  <div class="container footer__container">
+    <div class="footer__production">
+      <div class="footer__navigation">
+        <ul class="footer__list">
+          <li class="footer__item footer__item_head"><a href="#" class="footer__link">Пункты меню</a></li>
+          <li class="footer__item"><a href="projects.html" class="footer__link">Проекты</a></li>
+          <li class="footer__item"><a href="services.html" class="footer__link">Услуги</a></li>
+          <li class="footer__item"><a href="team.html" class="footer__link">Команда</a></li>
+          <li class="footer__item"><a href="contacts.html" class="footer__link">Контакты</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Брифинг</a></li>
+        </ul>
+        <ul class="footer__list">
+          <li class="footer__item footer__item_head"><a href="#" class="footer__link">Специализации</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Веб-Аналитика</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Дизайн</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Веб-разработка</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Поддержка и развитие</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Автоматизация</a></li>
+        </ul>
+        <ul class="footer__list">
+          <li class="footer__item footer__item_head"><a href="#" class="footer__link">Прочее</a></li>
+          <li class="footer__item"><a href="career.html" class="footer__link">Карьера</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Сертификаты</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Документация</a></li>
+          <li class="footer__item"><a href="public.html" class="footer__link">Публикации</a></li>
+        </ul>
+      </div>
+      <div class="footer__info">
+        <div class="footer__info_left">
+          <p class="footer__copyright">
+            © 2022-<span class="footer__year"></span> ООО “ЭНИЕРА” все права защищены.
+          </p>
+        </div>
+        <div class="footer__info_right">
+          <a href="policy.html" class="footer__privacy">Политика конфиденциальности</a>
+          <button onclick="document.location='#'" class="button__project footer__button">
+            <span class="button__text">В начало</span>
+            <span class="button__hover"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+  <script src="js/jquery.js"></script>
+  <script src="js/scrollify.js"></script>
+  <script id="rendered-js">
+    $.scrollify({
+      section: '.scrollify', //対象要素を指定
+      easing: 'swing', // イージングを指定
+      scrollSpeed: 600, // スクロール時の速度
+      updateHash: false, // スクロール時アドレスバーのURLを更新
+      afterRender: function () {// ページがリロードされたら
+        //変数に最初のHTMLを入れておいて
+        var pagenation = '<ul class="page_wrap">';
+        //eachイベントでクラス名「scrollify」の数だけHTMLをさっきの変数に追加します
+        $('.scrollify').each(function (i) {
+          // pagenation += '<li><a></a></li>';
+        });
+        //最後に閉じタグを忘れずに
+        pagenation += '</ul>';
+        //そんでもってクラス名「container」内に作成されたHTMLを追加
+        $('.main__section').append(pagenation);
+    
+        //ここでページネーションをクリックしたら指定のセクションに移動するよう仕向けます
+        $('.page_wrap a').each(function (i) {
+          $(this).on('click', function () {
+            $.scrollify.move(i);
+          });
+        });
+        //一番最初のセクションには最初から黒いのが付いてるようにします
+        $('.page_wrap li:first-child').find('a').addClass('active');
+      },
+      before: function (i) {// 移動先にスクロールする前に
+        //今ついている黒いのをとります
+        $('.page_wrap .active').removeClass('active');
+        //移動先に黒いのを付けます
+        $('.page_wrap').find('a').eq(i).addClass('active');
+      } });
+    //# sourceURL=pen.js
+        </script>
+</body>
+</html>
