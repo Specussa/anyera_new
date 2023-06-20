@@ -728,10 +728,10 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 72px);
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: 72px;
   left: 0;
   right: 0;
   background: var(--page-bg);
@@ -1009,10 +1009,10 @@ svg path {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100% - 72px);
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: 72px;
   left: 0;
   right: 0;
   background: var(--page-bg);
@@ -3857,6 +3857,7 @@ video {
 
 .projects__container {
   max-width: 1210px;
+  padding: 153px 0;
 }
 
 .projects__list_filter {
