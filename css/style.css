@@ -3983,7 +3983,7 @@ video {
   display: -ms-flexbox;
   display: flex;
   max-width: 892px;
-  margin: auto;
+  margin: 0 auto 80px;
 }
 
 .projects__block_item {
