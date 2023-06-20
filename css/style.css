@@ -57,9 +57,19 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   position: relative;
   background: var(--page-bg);
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main__section {
+  flex-grow: 1;
 }
 
 input:-webkit-autofill,
@@ -131,19 +141,6 @@ svg path {
   margin: 0 auto;
   padding: 0;
   position: relative;
-}
-
-.main {
-  flex: 1 0 auto;
-  overflow: hidden;
-}
-
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .overlay {
@@ -2904,7 +2901,7 @@ video {
 /* start footer */
 
 .footer {
-  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 .footer__production {

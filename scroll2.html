@@ -14,13 +14,13 @@
   <script>window.console = window.console || function(t) {};</script>
 </head>
 <body>
-  <!-- <div class="preloader">
+  <div class="preloader">
     <div class="preloader__top"></div>
     <div class="preloader__bottom"></div>
   </div>
   <div class="preloader__progress">
     <div class="preloader__progress_inner"></div>
-  </div> -->
+  </div>
   <header class="header">
     <div class="overlay"></div>
     <div class="container header__container">
@@ -258,9 +258,8 @@
     <li><a class=""><span>KEYS</span></a></li>
     <li><a class=""><span>FOOTER</span></a></li>
   </ul>
-  <div class="wrapper">
-    <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="">
-      <div class="main__section">
+  <main class="main" data-scroll-container="" data-scroll-section-id="section0" data-scroll-section-inview="">
+    <div class="main__section">
       <div class="main__border"></div>
       <section class="digital">
         <div class="container digital__container">
@@ -928,9 +927,7 @@
         </div>
       </div>
     </footer>
-    </main>
-    <!-- <div class="smooth-scrollbar"></div> -->
-  </div>
+  </main>
   <span class="c-scrollbar"><span class="c-scrollbar_thumb"></span></span>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
@@ -938,49 +935,25 @@
   <script src="js/TweenMax.js"></script>
   <script src="js/scroll.js"></script>
   <script>
-    document.body.classList.add('loaded');
-    // $(function(){
-    //   var tl = new TimelineMax();
-    //   tl.to('.preloader__progress_inner', 0.5, {width: '100%', ease: Quad.easeIn})
-    //     .to('.preloader__progress', 1, {width: '100%', onComplete: function(){
-    //     TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
-    //     document.body.style.overflow = "visible";
-    //     document.body.style.height = "100%";
-    //     setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
-    //     setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
-    //     document.body.classList.add('loaded');
-    //   }})
-    //     .to('.preloader__top', 1, {top: '-50%'})
-    //     .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
-    //     document.body.style.overflow = "hidden";
-    //     document.body.style.height = "100vh";
-    //     window.scrollTo(0,0);
-    // })
+    // document.body.classList.add('loaded');
+    $(function(){
+      var tl = new TimelineMax();
+      tl.to('.preloader__progress_inner', 0.5, {width: '100%', ease: Quad.easeIn})
+        .to('.preloader__progress', 1, {width: '100%', onComplete: function(){
+        TweenMax.to('.preloader__progress', 0.3, {opacity: 0})
+        document.body.style.overflow = "visible";
+        document.body.style.height = "100%";
+        setTimeout(() => {document.querySelector('.preloader').style.display = "none"}, 1000);
+        setTimeout(() => {document.querySelector('.preloader__progress').style.display = "none"}, 0);
+        document.body.classList.add('loaded');
+      }})
+        .to('.preloader__top', 1, {top: '-50%'})
+        .to('.preloader__bottom', 1, {top: '100%'}, "-=1"); 
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
+        window.scrollTo(0,0);
+    })
   </script>
-  <!-- <script>
-    const smoothCoef = 0.05;
-    const smoothScroll = document.querySelector(".wrapper");
-    const smoothScrollBar = document.querySelector(".smooth-scrollbar");
-    function onResize(e) {smoothScrollBar.style.height = smoothScroll.offsetHeight + "px";}
-
-    window.addEventListener("resize", onResize);
-    onResize();
-
-    let prevY = window.scrollY;
-    let curY = window.scrollY;
-    let y = window.scrollY;
-    let dy;
-
-    function loop(now) {
-      curY = window.scrollY;
-      dy = curY - prevY;
-      y = Math.abs(dy) < 1 ? curY : y + dy * smoothCoef;
-      prevY = y;
-      smoothScroll.style.transform = `translate3d(0,${-y}px,0)`;
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-  </script> -->
 <script id="rendered-js">
 
 const scroll = new LocomotiveScroll({
