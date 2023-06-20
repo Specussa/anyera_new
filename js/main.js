@@ -1246,120 +1246,84 @@ year.remove();
 
 // start index animation
 document.addEventListener('DOMContentLoaded', function(){
+  var eldots = document.querySelectorAll('.main__dots_list li a');
   let digital = document.querySelector('.digital');
   let digitalinfo = document.querySelectorAll('.digital__info');
   if(!digital){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let digitalopt = {threshold: [0.5] };
-        let digitalserv = new IntersectionObserver(onEntry, digitalopt);
-        for (let elm of digitalinfo) {digitalserv.observe(elm);}
-        const digitalhead = document.querySelectorAll('.digital__head_block'); 
-        [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('future__dots').classList.add('active');
       }
-  let showreel = document.querySelector('.showreel');
-  let showreelbutton = document.querySelectorAll('.showreel__button');
-  if(!showreel){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let showreelopt = {threshold: [0.5] };
-        let showreelserv = new IntersectionObserver(onEntry, showreelopt);
-        for (let elm of showreelbutton) {showreelserv.observe(elm);}
-      }
-  let development = document.querySelector('.development');
-  let developmentr = document.querySelectorAll('.development .development__block_right');
-  let developmentl = document.querySelectorAll('.development .development__block_left');
-  if(!development){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let devoptr = {threshold: [0.5] };
-        let devservr = new IntersectionObserver(onEntry, devoptr);
-        for (let elm of developmentr) {devservr.observe(elm);}
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let devoptl = {threshold: [0.5] };
-        let devservl = new IntersectionObserver(onEntry, devoptl);
-        for (let elm of developmentl) {devservl.observe(elm);}
-        const developmentlist = document.querySelectorAll('.development__list'); 
-        [...developmentlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-      }
-  let design = document.querySelector('.design');
-  let designr = document.querySelectorAll('.design .development__block_right');
-  let designl = document.querySelectorAll('.design .development__block_left');
-  if(!design){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let desoptr = {threshold: [0.5] };
-        let desservr = new IntersectionObserver(onEntry, desoptr);
-        for (let elm of designr) {desservr.observe(elm);}
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let desoptl = {threshold: [0.5] };
-        let desservl = new IntersectionObserver(onEntry, desoptl);
-        for (let elm of designl) {desservl.observe(elm);}
-      }
-  let analytic = document.querySelector('.analytics');
-  let analytics = document.querySelectorAll('.analytics__info');
-  if(!analytic){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let analyticopt = {threshold: [0.5] };
-        let analyticserv = new IntersectionObserver(onEntry, analyticopt);
-        for (let elm of analytics) {analyticserv.observe(elm);}
-        const analyticlist = document.querySelectorAll('.analytics__list'); 
-        [...analyticlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-      }
+    }
+    let digitalopt = {threshold: [0.5]};
+    let digitalserv = new IntersectionObserver(onEntry, digitalopt);
+    for (let elm of digitalinfo) {digitalserv.observe(elm);}
+    const digitalhead = document.querySelectorAll('.digital__head_block'); 
+    [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  }
+  let services = document.querySelector('.services');
+  let servicess = document.querySelectorAll('.services__list');
+  if(!services){} else {
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('services__dots').classList.add('active');
+    }
+  }
+    let servicesopt = {threshold: [0.5]};
+    let servicesserv = new IntersectionObserver(onEntry, servicesopt);
+    for (let elm of servicess) {servicesserv.observe(elm);}
+  }
   let project = document.querySelector('.projects');
   let projects = document.querySelectorAll('.projects__item');
   if(!project){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let projectopt = {threshold: [0.5] };
-        let projectserv = new IntersectionObserver(onEntry, projectopt);
-        for (let elm of projects) {projectserv.observe(elm);}
-        const ptags = document.querySelectorAll('.projects__tags'); 
-        [...ptags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('keys__dots').classList.add('active');
       }
-  let publication = document.querySelector('.publications');
-  let publications = document.querySelectorAll('.publications__info');
-  if(!publication){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let publicationopt = {threshold: [0.5] };
-        let publicationserv = new IntersectionObserver(onEntry, publicationopt);
-        for (let elm of publications) {publicationserv.observe(elm);}
-        const publicationblock = document.querySelectorAll('.publications__hashtags'); 
-        [...publicationblock].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-      }
-  let say = document.querySelector('.say');
-  let sayblock = document.querySelectorAll('.say__block');
-  if(!say){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let sayopt = {threshold: [0.5] };
-        let sayserv = new IntersectionObserver(onEntry, sayopt);
-        for (let elm of sayblock) {sayserv.observe(elm);}
-      }
+    }
+    let projectopt = {threshold: [0.5]};
+    let projectserv = new IntersectionObserver(onEntry, projectopt);
+    for (let elm of projects) {projectserv.observe(elm);}
+    const ptags = document.querySelectorAll('.projects__tags'); 
+    [...ptags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  }
   let footer = document.querySelector('.footer');
   let footerlist = document.querySelectorAll('.footer__list');
   let footerinfo = document.querySelectorAll('.footer__info');
   if(!footer){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let footerlistopt = {threshold: [0.5] };
-        let footerlistserv = new IntersectionObserver(onEntry, footerlistopt);
-        for (let elm of footerlist) {footerlistserv.observe(elm);}
-        [...footerlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let footerinfoopt = {threshold: [0.5] };
-        let footerinfoserv = new IntersectionObserver(onEntry, footerinfoopt);
-        for (let elm of footerinfo) {footerinfoserv.observe(elm);}
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('footer__dots').classList.add('active');
       }
+    }
+    let footerlistopt = {threshold: [0.5]};
+    let footerlistserv = new IntersectionObserver(onEntry, footerlistopt);
+    for (let elm of footerlist) {footerlistserv.observe(elm);}
+    [...footerlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+    let footerinfoopt = {threshold: [0.5]};
+    let footerinfoserv = new IntersectionObserver(onEntry, footerinfoopt);
+    for (let elm of footerinfo) {footerinfoserv.observe(elm);}
+  }
   let pfilter = document.querySelector('.projects__filter');
   let pfilters = document.querySelectorAll('.projects__filter');
   if(!pfilter){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let pfilteropt = {threshold: [0.5] };
-        let pfilterserv = new IntersectionObserver(onEntry, pfilteropt);
-        for (let elm of pfilters) {pfilterserv.observe(elm);}
-      }
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
+    let pfilteropt = {threshold: [0.5]};
+    let pfilterserv = new IntersectionObserver(onEntry, pfilteropt);
+    for (let elm of pfilters) {pfilterserv.observe(elm);}
+  }
   let breadcrumb = document.querySelector('.breadcrumbs__item');
   let breadcrumbs = document.querySelectorAll('.breadcrumbs__list');
   if(!breadcrumb){} else {
-        function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
-        let breadcrumbopt = {threshold: [0.5] };
-        let breadcrumbserv = new IntersectionObserver(onEntry, breadcrumbopt);
-        for (let elm of breadcrumbs) {breadcrumbserv.observe(elm);}
-        [...breadcrumbs].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-      }
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
+    let breadcrumbopt = {threshold: [0.5]};
+    let breadcrumbserv = new IntersectionObserver(onEntry, breadcrumbopt);
+    for (let elm of breadcrumbs) {breadcrumbserv.observe(elm);}
+    [...breadcrumbs].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  }
 }, false);
 // end index animation
