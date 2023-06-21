@@ -359,7 +359,7 @@ svg path {
   fill: var(--purple);
 }
 
-.button__language:hover, .button__language:active, .button__language:focus, .button__language.active {
+.button__language:hover, .button__language:active, .button__language.active {
   color: var(--purple);
 }
 
