@@ -369,10 +369,10 @@ hover.addEventListener('mouseover', function(e) {
 })
 hover.addEventListener('mouseout', function(e) {
   if(!elemHover) return
-  var target = e.target.closest('.header__nav_item')
-  
   elemHover = null;
 })
+// end hover menu
+
 // start dark mode
 const btnlight = document.querySelector('.button__light');
 const btndark = document.querySelector('.button__dark');
