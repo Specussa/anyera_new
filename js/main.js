@@ -1255,6 +1255,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var eldots = document.querySelectorAll('.main__dots_list li a');
   let digital = document.querySelector('.digital');
   let digitalinfo = document.querySelectorAll('.digital__info');
+  const digitalsl = document.querySelectorAll('.digital_social_list'); 
   if(!digital){} else {
     function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
       for (var i = 0; i < eldots.length; i++) {
@@ -1268,6 +1269,16 @@ document.addEventListener('DOMContentLoaded', function(){
     const digitalhead = document.querySelectorAll('.digital__head_block'); 
     [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
     setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "300");
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('future__dots').classList.add('active');
+      }
+    };
+    let digitallopt = {threshold: [0.5]};
+    let digitallserv = new IntersectionObserver(onEntry, digitallopt);
+    for (let elm of digitalsl) {digitallserv.observe(elm);}
+    [...digitalsl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
   }
   let accreditedlist = document.querySelector('.accredited__list');
   let accreditedlists = document.querySelectorAll('.accredited__list');
