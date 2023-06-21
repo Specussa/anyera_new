@@ -662,6 +662,60 @@ if(!filtercategorytwo){} else {
 }
 // end filter public
 
+// start public slider
+const elsliderpublic = document.querySelector('.public__slider');
+if(!elsliderpublic){} else {
+  const sliderSelector = '.public__slider',
+  options = {
+    grabCursor: true,
+    autoplay: false,
+    init: false,
+    // loop: true,
+    // centerSlides: true,
+    slidesPerView: 3, // or 'auto'
+    spaceBetween: 0,
+    // centeredSlides : true,
+    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
+    coverflowEffect: {
+      rotate: 0, // Slide rotate in degrees
+      stretch: 0, // Stretch space between slides (in px)
+      depth: 100, // Depth offset in px (slides translate in Z axis)
+      modifier: 0, // Effect multipler
+      slideShadows : false, // Enables slides shadows
+    },
+    grabCursor: true,
+    parallax: true,
+    // pagination: {
+    //   el: '.swiper-pagination',
+    //   clickable: true,
+    // },
+    navigation: {
+      nextEl: '.public__slider_next',
+      prevEl: '.public__slider_prev',
+    },
+    breakpoints: {
+      1199: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+        arrow: false,
+      },
+      639: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        arrow: false,
+      }
+    },
+    on: {
+      imagesReady: function(){
+        this.el.classList.remove('loading');
+      }
+    }
+  };
+  const mySwiper = new Swiper(sliderSelector, options);
+  mySwiper.init();
+}
+// end public slider
+
 // start team photo slider
 const elsliderphoto = document.querySelector('.team__photo');
 if(!elsliderphoto){} else {
@@ -1245,114 +1299,113 @@ year.remove();
 // end year
 
 // start index animation
-document.addEventListener('DOMContentLoaded', function(){
-  var eldots = document.querySelectorAll('.main__dots_list li a');
-  let digital = document.querySelector('.digital');
-  let digitalinfo = document.querySelectorAll('.digital__info');
-  const digitalsl = document.querySelectorAll('.digital_social_list'); 
-  if(!digital){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('future__dots').classList.add('active');
-      }
-    };
-    let digitalopt = {threshold: [0.5]};
-    let digitalserv = new IntersectionObserver(onEntry, digitalopt);
-    for (let elm of digitalinfo) {digitalserv.observe(elm);}
-    const digitalhead = document.querySelectorAll('.digital__head_block'); 
-    [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-    setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "300");
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('future__dots').classList.add('active');
-      }
-    };
-    let digitallopt = {threshold: [0.5]};
-    let digitallserv = new IntersectionObserver(onEntry, digitallopt);
-    for (let elm of digitalsl) {digitallserv.observe(elm);}
-    [...digitalsl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-  }
-  let accreditedlist = document.querySelector('.accredited__list');
-  let accreditedlists = document.querySelectorAll('.accredited__list');
-  if(!accreditedlist){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
-    let accreditedlistopt = {threshold: [0.5]};
-    let accreditedlistserv = new IntersectionObserver(onEntry, accreditedlistopt);
-    for (let elm of accreditedlists) {accreditedlistserv.observe(elm);}
-  }
-  let services = document.querySelector('.services');
-  let servicessublist = document.querySelectorAll('.services__list');
-  if(!services){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('services__dots').classList.add('active');
-      }
-    };
-    let servicesopt = {threshold: [0.5]};
-    let servicesserv = new IntersectionObserver(onEntry, servicesopt);
-    for (let elm of servicessublist) {servicesserv.observe(elm);}
-  }
-  let project = document.querySelector('.projects');
-  let projects = document.querySelectorAll('.projects__item');
-  let projectsbl = document.querySelectorAll('.projects__block_list');
-  if(!project){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-    };
-    let projectblopt = {threshold: [0.5]};
-    let projectsblerv = new IntersectionObserver(onEntry, projectblopt);
-    for (let elm of projectsbl) {projectsblerv.observe(elm);}
-  }
-  if(!project){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('keys__dots').classList.add('active');
-      }
-    };
-    let projectopt = {threshold: [0.5]};
-    let projectserv = new IntersectionObserver(onEntry, projectopt);
-    for (let elm of projects) {projectserv.observe(elm);}
-    const ptags = document.querySelectorAll('.projects__tags'); 
-    [...ptags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-  }
-  let footer = document.querySelector('.footer');
-  let footerlist = document.querySelectorAll('.footer__list');
-  let footerinfo = document.querySelectorAll('.footer__info');
-  if(!footer){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('footer__dots').classList.add('active');
-      }
-    };
-    let footerlistopt = {threshold: [0.5]};
-    let footerlistserv = new IntersectionObserver(onEntry, footerlistopt);
-    for (let elm of footerlist) {footerlistserv.observe(elm);}
-    
-    [...footerlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-    let footerinfoopt = {threshold: [0.5]};
-    let footerinfoserv = new IntersectionObserver(onEntry, footerinfoopt);
-    for (let elm of footerinfo) {footerinfoserv.observe(elm);}
-  }
-  let pfilter = document.querySelector('.projects__filter');
-  let pfilters = document.querySelectorAll('.projects__filter');
-  if(!pfilter){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
-    let pfilteropt = {threshold: [0.5]};
-    let pfilterserv = new IntersectionObserver(onEntry, pfilteropt);
-    for (let elm of pfilters) {pfilterserv.observe(elm);}
-  }
-  let breadcrumb = document.querySelector('.breadcrumbs__item');
-  let breadcrumbs = document.querySelectorAll('.breadcrumbs__list');
-  if(!breadcrumb){} else {
-    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
-    let breadcrumbopt = {threshold: [0.5]};
-    let breadcrumbserv = new IntersectionObserver(onEntry, breadcrumbopt);
-    for (let elm of breadcrumbs) {breadcrumbserv.observe(elm);}
-    [...breadcrumbs].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
-  }
-}, false);
+var eldots = document.querySelectorAll('.main__dots_list li a');
+let digital = document.querySelector('.digital');
+let digitalinfo = document.querySelectorAll('.digital__info');
+const digitalsl = document.querySelectorAll('.digital_social_list'); 
+if(!digital){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('future__dots').classList.add('active');
+    }
+  };
+  let digitalopt = {threshold: [0.5]};
+  let digitalserv = new IntersectionObserver(onEntry, digitalopt);
+  for (let elm of digitalinfo) {digitalserv.observe(elm);}
+  const digitalhead = document.querySelectorAll('.digital__head_block'); 
+  [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "300");
+  let digitallopt = {threshold: [0.5]};
+  let digitallserv = new IntersectionObserver(onEntry, digitallopt);
+  for (let elm of digitalsl) {digitallserv.observe(elm);}
+  [...digitalsl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+}
+
+let accreditedlist = document.querySelector('.accredited__list');
+let accreditedlists = document.querySelectorAll('.accredited__list');
+if(!accreditedlist){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
+  let accreditedlistopt = {threshold: [0.5]};
+  let accreditedlistserv = new IntersectionObserver(onEntry, accreditedlistopt);
+  for (let elm of accreditedlists) {accreditedlistserv.observe(elm);}
+}
+
+let services = document.querySelector('.services');
+let servicessublist = document.querySelectorAll('.services__list');
+if(!services){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('services__dots').classList.add('active');
+    }
+  };
+  let servicesopt = {threshold: [0.5]};
+  let servicesserv = new IntersectionObserver(onEntry, servicesopt);
+  for (let elm of servicessublist) {servicesserv.observe(elm);}
+}
+
+let project = document.querySelector('.projects');
+let projects = document.querySelectorAll('.projects__item');
+let projectsbl = document.querySelectorAll('.projects__block_list');
+if(!project){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+  };
+  let projectblopt = {threshold: [0.5]};
+  let projectsblerv = new IntersectionObserver(onEntry, projectblopt);
+  for (let elm of projectsbl) {projectsblerv.observe(elm);}
+}
+
+if(!project){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('keys__dots').classList.add('active');
+    }
+  };
+  let projectopt = {threshold: [0.5]};
+  let projectserv = new IntersectionObserver(onEntry, projectopt);
+  for (let elm of projects) {projectserv.observe(elm);}
+  const ptags = document.querySelectorAll('.projects__tags'); 
+  [...ptags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+}
+
+let footer = document.querySelector('.footer');
+let footerlist = document.querySelectorAll('.footer__list');
+let footerinfo = document.querySelectorAll('.footer__info');
+if(!footer){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('footer__dots').classList.add('active');
+    }
+  };
+  let footerlistopt = {threshold: [0.5]};
+  let footerlistserv = new IntersectionObserver(onEntry, footerlistopt);
+  for (let elm of footerlist) {footerlistserv.observe(elm);}
+  
+  [...footerlist].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+  let footerinfoopt = {threshold: [0.5]};
+  let footerinfoserv = new IntersectionObserver(onEntry, footerinfoopt);
+  for (let elm of footerinfo) {footerinfoserv.observe(elm);}
+}
+
+let pfilter = document.querySelector('.projects__filter');
+let pfilters = document.querySelectorAll('.projects__filter');
+if(!pfilter){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
+  let pfilteropt = {threshold: [0.5]};
+  let pfilterserv = new IntersectionObserver(onEntry, pfilteropt);
+  for (let elm of pfilters) {pfilterserv.observe(elm);}
+}
+
+let breadcrumb = document.querySelector('.breadcrumbs__item');
+let breadcrumbs = document.querySelectorAll('.breadcrumbs__list');
+if(!breadcrumb){} else {
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});};
+  let breadcrumbopt = {threshold: [0.5]};
+  let breadcrumbserv = new IntersectionObserver(onEntry, breadcrumbopt);
+  for (let elm of breadcrumbs) {breadcrumbserv.observe(elm);}
+  [...breadcrumbs].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+}
 // end index animation
