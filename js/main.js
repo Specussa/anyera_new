@@ -1269,21 +1269,30 @@ document.addEventListener('DOMContentLoaded', function(){
     [...digitalhead].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
     setTimeout(() => {for (var i = 0; i < eldots.length; i++) {eldots[i].classList.remove('active');document.getElementById('future__dots').classList.add('active');}}, "300");
   }
+  let accreditedlist = document.querySelector('.accredited__list');
+  let accreditedlists = document.querySelectorAll('.accredited__list');
+  if(!accreditedlist){} else {
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
+    let accreditedlistopt = {threshold: [0.5]};
+    let accreditedlistserv = new IntersectionObserver(onEntry, accreditedlistopt);
+    for (let elm of accreditedlists) {accreditedlistserv.observe(elm);}
+  }
   let services = document.querySelector('.services');
-  let servicess = document.querySelectorAll('.services__list');
+  let servicessublist = document.querySelectorAll('.services__list');
   if(!services){} else {
     function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
     for (var i = 0; i < eldots.length; i++) {
       eldots[i].classList.remove('active');
       document.getElementById('services__dots').classList.add('active');
     }
-  }
+    }
     let servicesopt = {threshold: [0.5]};
     let servicesserv = new IntersectionObserver(onEntry, servicesopt);
-    for (let elm of servicess) {servicesserv.observe(elm);}
+    for (let elm of servicessublist) {servicesserv.observe(elm);}
   }
   let project = document.querySelector('.projects');
   let projects = document.querySelectorAll('.projects__item');
+  let projectsbl = document.querySelectorAll('.projects__block_list');
   if(!project){} else {
     function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});
       for (var i = 0; i < eldots.length; i++) {
@@ -1291,6 +1300,10 @@ document.addEventListener('DOMContentLoaded', function(){
         document.getElementById('keys__dots').classList.add('active');
       }
     }
+    let projectblopt = {threshold: [0.5]};
+    let projectsblerv = new IntersectionObserver(onEntry, projectblopt);
+    for (let elm of projectsbl) {projectsblerv.observe(elm);}
+    function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
     let projectopt = {threshold: [0.5]};
     let projectserv = new IntersectionObserver(onEntry, projectopt);
     for (let elm of projects) {projectserv.observe(elm);}

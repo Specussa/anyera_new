@@ -579,18 +579,11 @@
         document.querySelector('.preloader').style.display = "none";
       }, 300);
     }
+    const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true, getSpeed: true,getDirection: true});
+    const hn_scroll = document.querySelector('.header__nav_scroll');
+    const hc_scroll = document.querySelector('.header__consultation_scroll');
+    Scrollbar.init(hn_scroll);
+    Scrollbar.init(hc_scroll);
   </script>
-<script>
-  // start scroll menu
-  const scroll = new LocomotiveScroll({el: document.querySelector('[data-scroll-container]'),smooth: true });
-  scroll.on('scroll', (args) => {
-    console.log(args);
-  });
-  const hn_scroll = document.querySelector('.header__nav_scroll');
-  const hc_scroll = document.querySelector('.header__consultation_scroll');
-  Scrollbar.init(hn_scroll);
-  Scrollbar.init(hc_scroll);
-  // end scroll menu
-</script>
 </body>
 </html>
