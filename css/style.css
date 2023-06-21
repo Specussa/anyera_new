@@ -4585,7 +4585,7 @@ html.has-scroll-dragging {
   border-left: 3px solid var(--page-text);
 }
 
-.public_slider, .public__info {
+.public__height, .public__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
