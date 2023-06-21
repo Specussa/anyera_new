@@ -128,6 +128,12 @@ for (const anchor of anchors) {
     }
   })
 }
+const header__globe = document.getElementById('header__globe');
+const button__languages = document.querySelector('.button__languages');
+
+header__globe.onclick = function(){
+  button__languages.classList.toggle('active');
+}
 // end navbar
 
 // start navbar
