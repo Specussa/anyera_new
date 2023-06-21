@@ -4634,9 +4634,13 @@ html.has-scroll-dragging {
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
-  color: var(--page-text);
+  color: var(--page-bg);
   background-color: var(--purple);
   clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 7px) 100%, 0 100%, 0 0);
+}
+
+.dark .public__tag {
+  color: var(--page-text);
 }
 
 .public__slider_head {
