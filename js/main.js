@@ -1,4 +1,5 @@
 // start navbar
+const bodyoverlay = document.querySelector('.overlay');
 const menu = document.querySelector('.header__nav');
 const menu_c = document.querySelector('.header__consultation');
 const menu_v = document.querySelector('.header__career');
@@ -14,6 +15,7 @@ const burgernav_s = document.querySelector('.header__say_burger');
 // кнопка header__burger
 document.querySelector('.header__burger').addEventListener('click', function() {
   if (burger.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
     menu.classList.remove("active");
     burger.classList.remove("active");
     document.body.style.overflow = "visible";
@@ -28,6 +30,7 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     if(!burger_s){} else {burger_s.classList.remove("active");}
     if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
   } else {
+    bodyoverlay.classList.add("active");
     menu.classList.add("active");
     burger.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -43,6 +46,7 @@ document.querySelector('.header__burger').addEventListener('click', function() {
     if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
   }
   if (burger_c.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
     menu_c.classList.remove("active");
     burger_c.classList.remove("active");
     document.body.style.overflow = "visible";
@@ -52,6 +56,7 @@ document.querySelector('.header__burger').addEventListener('click', function() {
 // кнопка header__project
 document.querySelector('.header__project').addEventListener('click', function() {
   if (burger_c.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
     menu_c.classList.remove("active");
     burger_c.classList.remove("active");
     document.body.style.overflow = "visible";
@@ -65,6 +70,7 @@ document.querySelector('.header__project').addEventListener('click', function() 
     if(!burger_s){} else {burger_s.classList.remove("active");}
     if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
   } else {
+    bodyoverlay.classList.add("active");
     menu_c.classList.add("active");
     burger_c.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -79,11 +85,13 @@ document.querySelector('.header__project').addEventListener('click', function() 
     if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
   }
   if (burgernav_c.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
     menu_c.classList.remove("active");
     burgernav_c.classList.remove("active");
     document.body.style.overflow = "visible";
     document.body.style.height = "100%";
   } else {
+    bodyoverlay.classList.add("active");
     menu_c.classList.add("active");
     burgernav_c.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -93,6 +101,7 @@ document.querySelector('.header__project').addEventListener('click', function() 
 // кнопка закрыть для header__project
 document.querySelector('.header__consultation_burger').addEventListener('click', function() {
   if (burgernav_c.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
     menu_c.classList.remove("active");
     burger_c.classList.remove("active");
     burgernav_c.classList.remove("active");
@@ -100,34 +109,6 @@ document.querySelector('.header__consultation_burger').addEventListener('click',
     document.body.style.height = "100%";
   }
 })
-// закрыть все оверлеии при нажатии на nav menu
-const anchors = document.querySelectorAll(".header__anchor_item")
-for (const anchor of anchors) {
-  anchor.addEventListener('click', function(event) {
-    if (burger.classList.contains("active")) {
-      menu.classList.remove("active");
-      burger.classList.remove("active");
-      document.body.style.overflow = "visible";
-      document.body.style.height = "100%";
-    }
-    if (burger_c.classList.contains("active")) {
-      menu_c.classList.remove("active");
-      burger_c.classList.remove("active");
-      burgernav_c.classList.remove("active");
-      document.body.style.overflow = "visible";
-      document.body.style.height = "100%";
-    }
-    if(!burgernav_v){} else {
-      if (burgernav_v.classList.contains("active")) {
-        menu_v.classList.remove("active");
-        burger_v.classList.remove("active");
-        burgernav_v.classList.remove("active");
-        document.body.style.overflow = "visible";
-        document.body.style.height = "100%";
-      }
-    }
-  })
-}
 // end navbar
 
 // start navbar
@@ -147,6 +128,7 @@ if(!burger_v){} else {
   // кнопка career__button
   burger_v.addEventListener('click', function() {
     if (burger_v.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_v.classList.remove("active");
       burger_v.classList.remove("active");
       document.body.style.overflow = "visible";
@@ -160,6 +142,7 @@ if(!burger_v){} else {
       if(!burger_s){} else {burger_s.classList.remove("active");}
       if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
     } else {
+      bodyoverlay.classList.add("active");
       menu_v.classList.add("active");
       burger_v.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -174,11 +157,13 @@ if(!burger_v){} else {
       if(!burgernav_s){} else {burgernav_s.classList.remove("active");}
     }
     if (burgernav_v.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_v.classList.remove("active");
       burgernav_v.classList.remove("active");
       document.body.style.overflow = "visible";
       document.body.style.height = "100%";
     } else {
+      bodyoverlay.classList.add("active");
       menu_v.classList.add("active");
       burgernav_v.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -188,6 +173,7 @@ if(!burger_v){} else {
   // кнопка закрыть для career__button
   burgernav_v.addEventListener('click', function() {
     if (burgernav_v.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_v.classList.remove("active");
       burger_v.classList.remove("active");
       burgernav_v.classList.remove("active");
@@ -196,6 +182,44 @@ if(!burger_v){} else {
     }
   })
 }
+// закрыть все оверлеии при нажатии на nav menu
+bodyoverlay.addEventListener('click', function(event) {
+  if (burger.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
+    menu.classList.remove("active");
+    burger.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+  }
+  if (burger_c.classList.contains("active")) {
+    bodyoverlay.classList.remove("active");
+    menu_c.classList.remove("active");
+    burger_c.classList.remove("active");
+    burgernav_c.classList.remove("active");
+    document.body.style.overflow = "visible";
+    document.body.style.height = "100%";
+  }
+  if(!burgernav_v){} else {
+    if (burgernav_v.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
+      menu_v.classList.remove("active");
+      burger_v.classList.remove("active");
+      burgernav_v.classList.remove("active");
+      document.body.style.overflow = "visible";
+      document.body.style.height = "100%";
+    }
+  }
+  if(!burgernav_s){} else {
+    if (burgernav_s.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
+      menu_s.classList.remove("active");
+      burger_s.classList.remove("active");
+      burgernav_s.classList.remove("active");
+      document.body.style.overflow = "visible";
+      document.body.style.height = "100%";
+    }
+  }
+})
 // end career
 
 // start say
@@ -203,6 +227,7 @@ if(!burger_s){} else {
   // кнопка say__button
   burger_s.addEventListener('click', function() {
     if (burger_s.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_s.classList.remove("active");
       burger_s.classList.remove("active");
       document.body.style.overflow = "visible";
@@ -216,6 +241,7 @@ if(!burger_s){} else {
       if(!burger_v){} else {burger_v.classList.remove("active");}
       if(!burgernav_v){} else {burgernav_v.classList.remove("active");}
     } else {
+      bodyoverlay.classList.add("active");
       menu_s.classList.add("active");
       burger_s.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -230,11 +256,13 @@ if(!burger_s){} else {
       if(!burgernav_v){} else {burgernav_v.classList.remove("active");}
     }
     if (burgernav_s.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_s.classList.remove("active");
       burgernav_s.classList.remove("active");
       document.body.style.overflow = "visible";
       document.body.style.height = "100%";
     } else {
+      bodyoverlay.classList.add("active");
       menu_s.classList.add("active");
       burgernav_s.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -244,6 +272,7 @@ if(!burger_s){} else {
   // кнопка закрыть для say__button
   burgernav_s.addEventListener('click', function() {
     if (burgernav_s.classList.contains("active")) {
+      bodyoverlay.classList.remove("active");
       menu_s.classList.remove("active");
       burger_s.classList.remove("active");
       burgernav_s.classList.remove("active");
