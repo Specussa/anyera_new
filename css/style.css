@@ -1584,7 +1584,7 @@ svg path {
   padding: 10px 20px;
   color: var(--page-bg);
   border-bottom: 1px solid var(--gray-border);
-  background: var(--page-bg);
+  background: var(--purple);
   cursor: pointer;
 }
 
@@ -1592,9 +1592,14 @@ svg path {
   color: var(--page-text);
 }
 
-.header__select_list_item:hover {
+.dark .header__select_list_item:hover {
   color: var(--page-text);
-  background: var(--purple);
+  background: var(--page-bg);
+}
+
+.header__select_list_item:hover {
+  color: var(--page-bg);
+  background: var(--page-text);
 }
 
 .header__select_input {
