@@ -3340,11 +3340,11 @@ video {
 }
 
 .loaded .footer__info.animate .footer__privacy {
-  -webkit-transition-delay: 0.3s;
-  -moz-transition-delay: 0.3s;
-  -ms-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s, 0.3s, 0s;
+  -moz-transition-delay: 0.3s, 0.3s, 0s;
+  -ms-transition-delay: 0.3s, 0.3s, 0s;
+  -o-transition-delay: 0.3s, 0.3s, 0s;
+  transition-delay: 0.3s, 0.3s, 0s;
 }
 
 .footer__button {
