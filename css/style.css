@@ -159,8 +159,12 @@ svg path {
 
 .overlay.active {
   background-color: var(--page-bg);
-  opacity: 0.9;
+  opacity: 0.95;
   visibility: visible;
+}
+
+.dark .overlay.active {
+  opacity: 0.9;
 }
 
 .main__border {
