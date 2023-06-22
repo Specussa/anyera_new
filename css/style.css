@@ -1553,12 +1553,16 @@ svg path {
   padding: 10px 20px;
   color: var(--page-bg);
   border-bottom: 1px solid var(--gray-border);
-  background: var(--page-text);
+  background: var(--page-bg);
   cursor: pointer;
 }
 
+.dark .header__select_list_item{
+  color: var(--page-text);
+}
+
 .header__select_list_item:hover {
-  color: var(--page-bg);
+  color: var(--page-text);
   background: var(--purple);
 }
 
