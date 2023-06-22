@@ -853,7 +853,6 @@ svg path {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* width: 100%; */
   width: 50%;
   height: calc(100% - 72px);
   flex-direction: column;
@@ -873,7 +872,7 @@ svg path {
   -ms-transition: -ms-transform 0.3s linear;
   -o-transition: -o-transform 0.3s linear;
   transition: transform 0.3s linear;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .header__nav::-webkit-scrollbar {
@@ -923,7 +922,7 @@ svg path {
 }
 
 .header__nav_list {
-  width: calc(100% - 17px);
+  width: 100%;
   position: relative;
 }
 
