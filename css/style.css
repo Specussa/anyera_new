@@ -4160,23 +4160,33 @@ video {
 }
 
 .projects__item {
+  width: 50%;
+  padding: 30px;
+}
+
+.projects__padding {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
-  float: left;
-  page-break-inside: avoid;
-  break-inside: avoid;
+  padding: 0px;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  -webkit-transition: padding 0.3s linear;
+  -moz-transition: padding 0.3s linear;
+  -ms-transition: padding 0.3s linear;
+  -o-transition: padding 0.3s linear;
+  transition: padding 0.3s linear;
+}
+
+.loaded .projects__item.animate:hover .projects__padding {
+  padding: 30px;
 }
 
 .projects__item_block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 30px;
   flex-direction: column;
   transition-delay: 0.3s;
   position: relative;
