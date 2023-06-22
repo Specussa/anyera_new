@@ -413,6 +413,10 @@ svg path {
   transition: transform 0.3s linear, fill 0.3s linear;
 }
 
+.button__close svg circle:nth-child(4) {
+  fill: var(--purple);
+}
+
 .button__close:hover svg {
   fill: var(--purple);
 }
@@ -5116,6 +5120,7 @@ html.has-scroll-dragging {
 
 .header__career_container {
   height: 100%;
+  max-width: 1210px;
 }
 
 .header__career_burger_flex {
@@ -5144,13 +5149,10 @@ html.has-scroll-dragging {
   width: 100%;
   height: max-content;
   min-height: 100%;
-  max-width: 1800px;
-  padding: 100px;
+  padding: 100px 0;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border-left: 1px solid var(--gray-border);
-  border-right: 1px solid var(--gray-border);
 }
 
 .header__career_block {
