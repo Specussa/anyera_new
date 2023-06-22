@@ -912,6 +912,7 @@ svg path {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .header__nav_info {
@@ -928,7 +929,6 @@ svg path {
 
 .header__nav_item {
   width: fit-content;
-  max-width: 435px;
 }
 
 .header__nav_link::before {
