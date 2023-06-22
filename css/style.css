@@ -1550,7 +1550,6 @@ svg path {
   transition: max-height 0.4s linear, visibility 0.4s linear;
   position: absolute;
   top: 42px;
-  z-index: 10;
   overflow: auto;
   border: 1px solid transparent;
   visibility: hidden;
@@ -1570,6 +1569,7 @@ svg path {
   -ms-transition-delay: 0s;
   -o-transition-delay: 0s;
   transition-delay: 0s;
+  z-index: 10;
 }
 
 .header__select_list::-webkit-scrollbar {
