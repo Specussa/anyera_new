@@ -1726,7 +1726,7 @@ svg path {
   padding: 3px 23px 3px 18px;
   position: absolute;
   right: calc(100% + 9px);
-  color: var(--page-text);
+  color: var(--page-bg);
   background-color: var(--purple);
   clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 0);
   font-size: 8px;
@@ -1739,12 +1739,12 @@ svg path {
   transition: opacity 0.1s linear;
 }
 
-.main__dots a:hover span {
-  opacity: 1;
+.dark .main__dots a span {
+  color: var(--page-text);
 }
 
-.main__dots a:hover span, .main__dots a:focus span, .main__dots a:active span {
-  color: var(--page-text);
+.main__dots a:hover span {
+  opacity: 1;
 }
 
 /* end scrollify */
