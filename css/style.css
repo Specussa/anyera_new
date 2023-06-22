@@ -4168,19 +4168,9 @@ video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0px;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  -webkit-transition: padding 0.3s linear;
-  -moz-transition: padding 0.3s linear;
-  -ms-transition: padding 0.3s linear;
-  -o-transition: padding 0.3s linear;
-  transition: padding 0.3s linear;
-}
-
-.loaded .projects__item.animate:hover .projects__padding {
-  padding: 30px;
 }
 
 .projects__item_block {
@@ -4348,11 +4338,11 @@ video {
   -ms-transform: translateY(50px);
   -o-transform: translateY(50px);
   transform: translateY(50px);
-  -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear;
-  -moz-transition: -moz-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear;
-  -ms-transition: -ms-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear;
-  -o-transition: -o-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear;
-  transition: transform 0.3s linear, opacity 0.3s linear, color 0.3s linear;
+  -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear, padding 0.3s linear;
+  -moz-transition: -moz-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear, padding 0.3s linear;
+  -ms-transition: -ms-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear, padding 0.3s linear;
+  -o-transition: -o-transform 0.3s linear, opacity 0.3s linear, color 0.3s linear, padding 0.3s linear;
+  transition: transform 0.3s linear, opacity 0.3s linear, color 0.3s linear, padding 0.3s linear;
   -webkit-transition-delay: 0.1s;
   -moz-transition-delay: 0.1s;
   -ms-transition-delay: 0.1s;
@@ -4367,6 +4357,10 @@ video {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
+}
+
+.loaded .projects__item.animate:hover .projects__heading {
+  padding: 30px 30px 0;
 }
 
 .projects__hover {
@@ -4415,6 +4409,7 @@ video {
   display: flex;
   width: 100%;
   height: 100%;
+  padding: 0 30px 30px;
   gap: 40px;
   flex-direction: column;
   position: absolute;
