@@ -1562,7 +1562,7 @@ svg path {
 }
 
 .header__select_list_opened {
-  max-height: 200px;
+  max-height: 400px;
   border-color: var(--gray-border);
   visibility: visible;
   -webkit-transition-delay: 0s;
