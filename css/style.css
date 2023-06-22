@@ -894,6 +894,9 @@ svg path {
   -ms-transform: translateX(0%);
   -o-transform: translateX(0%);
   transform: translateX(0%);
+  -webkit-box-shadow: 5px 0px 9px 2px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 5px 0px 9px 2px rgba(0, 0, 0, 0.37);
+  box-shadow: 5px 0px 9px 2px rgba(0, 0, 0, 0.37);
 }
 
 .header__nav_container {
