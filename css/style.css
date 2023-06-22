@@ -893,7 +893,7 @@ svg path {
 
 .header__nav_container {
   height: 100%;
-  max-width: 1440px;
+  max-width: 1210px;
 }
 
 .header__nav_block {
@@ -903,7 +903,7 @@ svg path {
   width: 100%;
   height: max-content;
   min-height: calc(100vh - 72px);
-  padding: 60px 100px 120px;
+  padding: 60px 0;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -1209,7 +1209,7 @@ svg path {
 
 .header__consultation_container {
   height: 100%;
-  max-width: 1440px;
+  max-width: 1210px;
 }
 
 .header__consultation_blocks {
@@ -1219,8 +1219,7 @@ svg path {
   width: 100%;
   height: max-content;
   min-height: calc(100vh - 72px);
-  max-width: 1800px;
-  padding: 100px;
+  padding: 60px 0;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -1583,7 +1582,7 @@ svg path {
 .header__consultation_burger {
   position: absolute;
   top: 33px;
-  right: 33px;
+  right: -10px;
   z-index: 1;
 }
 
