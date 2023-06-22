@@ -4276,7 +4276,7 @@ video {
   transition-delay: 0.6s;
 }
 
-.loaded .projects__block_list.animate .services__button {
+.loaded .projects__block_list.animate .services__bottom {
   -webkit-transition-delay: 0.9s, 0.9s, 0s;
   -moz-transition-delay: 0.9s, 0.9s, 0s;
   -ms-transition-delay: 0.9s, 0.9s, 0s;
@@ -5100,11 +5100,11 @@ html.has-scroll-dragging {
 }
 
 .loaded .say__flex.animate .say__button {
-  -webkit-transition-delay: 0.6s, 0.6s, 0;
-  -moz-transition-delay: 0.6s, 0.6s, 0;
-  -ms-transition-delay: 0.6s, 0.6s, 0;
-  -o-transition-delay: 0.6s, 0.6s, 0;
-  transition-delay: 0.6s, 0.6s, 0;
+  -webkit-transition-delay: 0.6s, 0.6s, 0s;
+  -moz-transition-delay: 0.6s, 0.6s, 0s;
+  -ms-transition-delay: 0.6s, 0.6s, 0s;
+  -o-transition-delay: 0.6s, 0.6s, 0s;
+  transition-delay: 0.6s, 0.6s, 0s;
 }
 
 /* end say */
