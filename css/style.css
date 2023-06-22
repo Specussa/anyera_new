@@ -1554,11 +1554,13 @@ svg path {
   z-index: 10;
   overflow: auto;
   border: 1px solid transparent;
+  visibility: hidden;
 }
 
 .header__select_list_opened {
   max-height: 200px;
   border-color: var(--gray-border);
+  visibility: visible;
 }
 
 .header__select_list::-webkit-scrollbar {
