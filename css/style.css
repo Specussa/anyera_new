@@ -1900,6 +1900,10 @@ svg path {
   fill: #fff;
 }
 
+.showreel__modal_close svg circle:nth-child(4) {
+  fill: #fff;
+}
+
 .showreel__modal_visible {
   display: block;
 }
