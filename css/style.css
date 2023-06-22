@@ -1544,23 +1544,33 @@ svg path {
 .header__select_list {
   width: 100%;
   max-height: 0;
-  -webkit-transition: max-height 0.2s linear;
-  -moz-transition: max-height 0.2s linear;
-  -ms-transition: max-height 0.2s linear;
-  -o-transition: max-height 0.2s linear;
-  transition: max-height 0.2s linear;
+  -webkit-transition: max-height 0.2s linear, visibility 0.2s linear;
+  -moz-transition: max-height 0.2s linear, visibility 0.2s linear;
+  -ms-transition: max-height 0.2s linear, visibility 0.2s linear;
+  -o-transition: max-height 0.2s linear, visibility 0.2s linear;
+  transition: max-height 0.2s linear, visibility 0.2s linear;
   position: absolute;
   top: 42px;
   z-index: 10;
   overflow: auto;
   border: 1px solid transparent;
   visibility: hidden;
+  -webkit-transition-delay: 0s, 0.2s;
+  -moz-transition-delay: 0s, 0.2s;
+  -ms-transition-delay: 0s, 0.2s;
+  -o-transition-delay: 0s, 0.2s;
+  transition-delay: 0s, 0.2s;
 }
 
 .header__select_list_opened {
   max-height: 200px;
   border-color: var(--gray-border);
   visibility: visible;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
 }
 
 .header__select_list::-webkit-scrollbar {
