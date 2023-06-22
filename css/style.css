@@ -1361,6 +1361,10 @@ svg path {
   color: var(--page-text);
 }
 
+.header__form_button .button__hover, .header__form_button .button__hover:after {
+  height: 120%;
+}
+
 .header__form_policy {
   margin: 10px 0 0;
   font-size: 8px;
