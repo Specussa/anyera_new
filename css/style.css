@@ -4239,7 +4239,7 @@ video {
   border-left: 3px solid var(--page-text);
 }
 
-.projects__block_name, .projects__block_head, .projects__block_desc, .services__button {
+.projects__block_name, .projects__block_head, .projects__block_desc, .services__bottom {
   -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
   -ms-transform: translateY(50px);
