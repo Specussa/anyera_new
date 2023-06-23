@@ -471,7 +471,6 @@ svg path {
   -o-transition: height 0.3s linear;
   transition: height 0.3s linear;
   background: transparent;
-  cursor: pointer;
 }
 
 .header__progress_bar {
