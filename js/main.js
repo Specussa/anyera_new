@@ -1340,14 +1340,7 @@ let publicitem = document.querySelectorAll('.public__item');
 let publictags = document.querySelectorAll('.public__tags');
 if(!public){} else {
   function onEntry(entry) {
-    entry.forEach(change => {
-    if (change.isIntersecting) {
-      change.target.classList.add('animate');
-      for (var i = 0; i < eldots.length; i++) {
-        eldots[i].classList.remove('active');
-        document.getElementById('public__dots').classList.add('active');
-      }
-    } else {change.target.classList.remove('animate');}});}
+    entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
   let publicitemopt = {threshold: [0.1]};
   let publicitemerv = new IntersectionObserver(onEntry, publicitemopt);
   for (let elm of publicitem) {publicitemerv.observe(elm);}
@@ -1394,6 +1387,26 @@ if(!team){} else {
   let teamwopt = {threshold: [0.5]};
   let teamwserv = new IntersectionObserver(onEntry, teamwopt);
   for (let elm of teamwitem) {teamwserv.observe(elm);}
+}
+
+let technologies = document.querySelector('.technologies');
+let technologiesinfo = document.querySelectorAll('.technologies__info');
+if(!technologies){} else {
+  let technologiesd = document.querySelectorAll('.technologies');
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {
+    change.target.classList.add('animate');
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('technologies__dots').classList.add('active');
+    }
+  }});};
+  let technologiesdopt = {threshold: [0]};
+  let technologiesdserv = new IntersectionObserver(onEntry, technologiesdopt);
+  for (let elm of technologiesd) {technologiesdserv.observe(elm);}
+
+  let technologiesopt = {threshold: [0.5]};
+  let technologiesserv = new IntersectionObserver(onEntry, technologiesopt);
+  for (let elm of technologiesinfo) {technologiesserv.observe(elm);}
 }
 
 let breadcrumb = document.querySelector('.breadcrumbs__item');
