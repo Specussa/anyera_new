@@ -32,6 +32,9 @@
     <div class="preloader__bottom"></div>
   </div>
   <header class="header">
+    <div class="header__progress">
+      <div class="header__progress_bar"></div>
+    </div>
     <div class="container header__container">
       <button class="header__burger" aria-label="Открыть меню">
         <span>
@@ -925,6 +928,13 @@
     const hc_scroll = document.querySelector('.header__consultation_scroll');
     Scrollbar.init(hn_scroll);
     Scrollbar.init(hc_scroll);
+    const headerprogress = document.querySelector('.header__progress_bar');
+    scroll.on('scroll', (args) => {
+      var scrollY = Math.round(args["scroll"]["y"]);
+      var scrollH = Math.round(args["limit"]["y"]);
+      let scrollheader = Math.round((scrollY / scrollH) * 100);
+      headerprogress.style.flexBasis = scrollheader + '%';
+    });
   </script>
 </body>
 </html>

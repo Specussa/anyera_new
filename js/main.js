@@ -12,6 +12,7 @@ const burgernav = document.querySelector('.header__nav_burger');
 const burgernav_c = document.querySelector('.header__consultation_burger');
 const burgernav_v = document.querySelector('.header__career_burger');
 const burgernav_s = document.querySelector('.header__say_burger');
+
 // кнопка header__burger
 document.querySelector('.header__burger').addEventListener('click', function() {
   if (burger.classList.contains("active")) {
