@@ -699,25 +699,11 @@ if(!elsliderpublic){} else {
     grabCursor: true,
     autoplay: false,
     init: false,
-    // loop: true,
-    // centerSlides: true,
-    slidesPerView: 3, // or 'auto'
+    slidesPerView: 3,
     spaceBetween: 0,
-    // centeredSlides : true,
-    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
-    coverflowEffect: {
-      rotate: 0, // Slide rotate in degrees
-      stretch: 0, // Stretch space between slides (in px)
-      depth: 100, // Depth offset in px (slides translate in Z axis)
-      modifier: 0, // Effect multipler
-      slideShadows : false, // Enables slides shadows
-    },
+    effect: 'coverflow',
     grabCursor: true,
     parallax: true,
-    // pagination: {
-    //   el: '.swiper-pagination',
-    //   clickable: true,
-    // },
     navigation: {
       nextEl: '.public__slider_next',
       prevEl: '.public__slider_prev',
@@ -753,19 +739,9 @@ if(!elsliderteam){} else {
     grabCursor: true,
     autoplay: false,
     init: false,
-    // loop: true,
-    // centerSlides: true,
-    slidesPerView: 1, // or 'auto'
+    slidesPerView: 1,
     spaceBetween: 0,
-    // centeredSlides : true,
-    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
-    coverflowEffect: {
-      rotate: 0, // Slide rotate in degrees
-      stretch: 0, // Stretch space between slides (in px)
-      depth: 100, // Depth offset in px (slides translate in Z axis)
-      modifier: 0, // Effect multipler
-      slideShadows : false, // Enables slides shadows
-    },
+    effect: 'coverflow',
     autoplay: {
       delay: 7000,
       disableOnInteraction: false,
@@ -1392,7 +1368,7 @@ if(!team){} else {
 
   let teamwopt = {threshold: [0.5]};
   let teamwserv = new IntersectionObserver(onEntry, teamwopt);
-  for (let elm of teamwitem) {teamserv.observe(elm);}
+  for (let elm of teamwitem) {teamwserv.observe(elm);}
 }
 
 let breadcrumb = document.querySelector('.breadcrumbs__item');
