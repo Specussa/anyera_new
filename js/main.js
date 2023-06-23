@@ -745,77 +745,17 @@ if(!elsliderpublic){} else {
 }
 // end public slider
 
-// start team photo slider
-const elsliderphoto = document.querySelector('.team__photo');
-if(!elsliderphoto){} else {
-  const itemListParent = document.querySelector('.team__photo_slider');
-  const itemList = document.querySelectorAll('.team__photo_item');
-  window.addEventListener('resize', onResizeHandler, false);
-  if (document.documentElement.clientWidth >= 960) {
-    itemListParent.insertBefore(itemList[0], itemList[3]);
-  } else {
-    itemListParent.insertBefore(itemList[0], itemList[2]);
-  };
-  function onResizeHandler() {
-    if (document.documentElement.clientWidth >= 960) {
-      itemListParent.insertBefore(itemList[0], itemList[3]);
-    } else {
-      itemListParent.insertBefore(itemList[0], itemList[2]);
-    };
-  }
-  const sliderSelector = '.team__photo',
+// start team slider
+const elsliderteam = document.querySelector('.team__slider');
+if(!elsliderteam){} else {
+  const sliderSelector = '.team__slider',
   options = {
     grabCursor: true,
     autoplay: false,
     init: false,
     // loop: true,
     // centerSlides: true,
-    slidesPerView: 5, // or 'auto'
-    spaceBetween: 0,
-    // centeredSlides : true,
-    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
-    coverflowEffect: {
-      rotate: 0, // Slide rotate in degrees
-      stretch: 0, // Stretch space between slides (in px)
-      depth: 100, // Depth offset in px (slides translate in Z axis)
-      modifier: 1, // Effect multipler
-      slideShadows : false, // Enables slides shadows
-    },
-    grabCursor: true,
-    parallax: true,
-    navigation: {
-      nextEl: '.team__photo_next',
-      prevEl: '.team__photo_prev',
-    },
-    breakpoints: {
-      959: {
-        slidesPerView: 3,
-        spaceBetween: 0,
-        arrow: false,
-      }
-    },
-    on: {
-      imagesReady: function(){
-        this.el.classList.remove('loading');
-      }
-    }
-  };
-  const mySwiper = new Swiper(sliderSelector, options);
-  mySwiper.init();
-}
-// end team photo slider
-
-// start team review slider
-const elsliderreview = document.querySelector('.team__review');
-if(!elsliderreview){} else {
-  const sliderSelector = '.team__review',
-  options = {
-    grabCursor: true,
-    autoplay: false,
-    init: false,
-    // loop: true,
-    // centerSlides: true,
-    slidesPerView: 3, // or 'auto'
+    slidesPerView: 1, // or 'auto'
     spaceBetween: 0,
     // centeredSlides : true,
     effect: 'coverflow', // 'cube', 'fade', 'coverflow',
@@ -826,27 +766,19 @@ if(!elsliderreview){} else {
       modifier: 0, // Effect multipler
       slideShadows : false, // Enables slides shadows
     },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
     grabCursor: true,
     parallax: true,
-    // pagination: {
-    //   el: '.swiper-pagination',
-    //   clickable: true,
-    // },
-    navigation: {
-      nextEl: '.team__review_next',
-      prevEl: '.team__review_prev',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    breakpoints: {
-      1199: {
-        slidesPerView: 2,
-        spaceBetween: 0,
-        arrow: false,
-      },
-      639: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        arrow: false,
-      }
+    navigation: {
+      nextEl: '.team__slider_next',
+      prevEl: '.team__slider_prev',
     },
     on: {
       imagesReady: function(){
@@ -857,61 +789,7 @@ if(!elsliderreview){} else {
   const mySwiper = new Swiper(sliderSelector, options);
   mySwiper.init();
 }
-// end team review slider
-
-// start certificates review slider
-const elslidercertificates = document.querySelector('.certificates__review');
-if(!elslidercertificates){} else {
-  const sliderSelector = '.certificates__review',
-  options = {
-    grabCursor: true,
-    autoplay: false,
-    init: false,
-    // loop: true,
-    // centerSlides: true,
-    slidesPerView: 3, // or 'auto'
-    spaceBetween: 20,
-    // centeredSlides : true,
-    effect: 'coverflow', // 'cube', 'fade', 'coverflow',
-    coverflowEffect: {
-      rotate: 0, // Slide rotate in degrees
-      stretch: 0, // Stretch space between slides (in px)
-      depth: 100, // Depth offset in px (slides translate in Z axis)
-      modifier: 0, // Effect multipler
-      slideShadows : false, // Enables slides shadows
-    },
-    grabCursor: true,
-    parallax: true,
-    // pagination: {
-    //   el: '.swiper-pagination',
-    //   clickable: true,
-    // },
-    navigation: {
-      nextEl: '.certificates__review_next',
-      prevEl: '.certificates__review_prev',
-    },
-    breakpoints: {
-      1199: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        arrow: false,
-      },
-      639: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        arrow: false,
-      }
-    },
-    on: {
-      imagesReady: function(){
-        this.el.classList.remove('loading');
-      }
-    }
-  };
-  const mySwiper = new Swiper(sliderSelector, options);
-  mySwiper.init();
-}
-// end certificates review slider
+// end team slider
 
 // start video
 const preview = document.querySelector('.showreel__button');
@@ -1489,6 +1367,26 @@ if(!public){} else {
   let publicitemerv = new IntersectionObserver(onEntry, publicitemopt);
   for (let elm of publicitem) {publicitemerv.observe(elm);}
   [...publictags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
+}
+
+let team = document.querySelector('.team');
+let teamsublist = document.querySelectorAll('.team__item');
+if(!team){} else {
+  let teamd = document.querySelectorAll('.team');
+  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {
+    change.target.classList.add('animate');
+    for (var i = 0; i < eldots.length; i++) {
+      eldots[i].classList.remove('active');
+      document.getElementById('team__dots').classList.add('active');
+    }
+  }});};
+  let teamdopt = {threshold: [0]};
+  let teamdserv = new IntersectionObserver(onEntry, teamdopt);
+  for (let elm of teamd) {teamdserv.observe(elm);}
+
+  let teamopt = {threshold: [0.5]};
+  let teamserv = new IntersectionObserver(onEntry, teamopt);
+  for (let elm of teamsublist) {teamserv.observe(elm);}
 }
 
 let breadcrumb = document.querySelector('.breadcrumbs__item');
