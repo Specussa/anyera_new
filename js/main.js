@@ -1339,15 +1339,26 @@ let publicinfo = document.querySelectorAll('.public__info');
 let publicitem = document.querySelectorAll('.public__item');
 let publictags = document.querySelectorAll('.public__tags');
 if(!public){} else {
+  let publicd = document.querySelectorAll('.public');
   function onEntry(entry) {
-    entry.forEach(change => {if (change.isIntersecting) {change.target.classList.add('animate');}});}
+    entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('animate');
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('public__dots').classList.add('active');
+      }
+    } else {change.target.classList.remove('animate');}});}
+  let publicdopt = {threshold: [0]};
+  let publicdserv = new IntersectionObserver(onEntry, publicdopt);
+  for (let elm of publicd) {publicdserv.observe(elm);}
+
   let publicitemopt = {threshold: [0.1]};
   let publicitemerv = new IntersectionObserver(onEntry, publicitemopt);
   for (let elm of publicitem) {publicitemerv.observe(elm);}
   [...publictags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 }
 if(!public){} else {
-  let publicd = document.querySelectorAll('.public');
   function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {
     change.target.classList.add('animate');
     for (var i = 0; i < eldots.length; i++) {
@@ -1355,9 +1366,6 @@ if(!public){} else {
       document.getElementById('public__dots').classList.add('active');
     }
   }});};
-  let publicdopt = {threshold: [0]};
-  let publicdserv = new IntersectionObserver(onEntry, publicdopt);
-  for (let elm of publicd) {publicdserv.observe(elm);}
   
   let publicinfoopt = {threshold: [0.5]};
   let publicinfoerv = new IntersectionObserver(onEntry, publicinfoopt);
