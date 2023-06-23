@@ -700,7 +700,6 @@ if(!elsliderpublic){} else {
     autoplay: false,
     init: false,
     slidesPerView: 3,
-    slidesPerGroup: 3,
     spaceBetween: 0,
     effect: 'coverflow',
     coverflowEffect: {
@@ -1348,7 +1347,7 @@ if(!public){} else {
         document.getElementById('public__dots').classList.add('active');
       }
     } else {change.target.classList.remove('animate');}});}
-  let publicitemopt = {threshold: [0.5]};
+  let publicitemopt = {threshold: [0.1]};
   let publicitemerv = new IntersectionObserver(onEntry, publicitemopt);
   for (let elm of publicitem) {publicitemerv.observe(elm);}
   [...publictags].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
