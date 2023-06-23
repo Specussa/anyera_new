@@ -767,7 +767,7 @@ if(!elsliderteam){} else {
       slideShadows : false, // Enables slides shadows
     },
     autoStart: true,
-    speed: 1000,
+    speed: 700,
     pause: 7000,
     grabCursor: true,
     parallax: true,
