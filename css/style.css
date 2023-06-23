@@ -5536,6 +5536,10 @@ html.has-scroll-dragging {
   clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 0);
 }
 
+.dark .team__slider_head {
+  color: var(--page-text);
+}
+
 .team__slider_info {
   font-size: 10px;
   font-weight: 400;
