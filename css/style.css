@@ -5543,13 +5543,6 @@ html.has-scroll-dragging {
   color: var(--page-text);
 }
 
-.swiper-container-horizontal>.team__pagination.swiper-pagination-bullets {
-  width: 50%;
-  padding: 0 15px 0 60px;
-  position: absolute;
-  bottom: 40px;
-}
-
 .team__slider_prev, .team__slider_next {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5582,6 +5575,57 @@ html.has-scroll-dragging {
 
 .team__slider_prev.swiper-button-disabled, .team__slider_next.swiper-button-disabled {
   opacity: 0.35;
+}
+
+.swiper-container-horizontal>.team__pagination.swiper-pagination-bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  padding: 0 15px 0 60px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.team__pagination .swiper-pagination-bullet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 10px;
+  height: 10px;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  background: transparent;
+}
+
+.swiper-container-horizontal>.team__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+}
+
+.team__pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::after, .team__pagination .swiper-pagination-bullet:hover::after {
+  width: 10px;
+  height: 10px;
+  background-color: var(--purple);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.team__pagination .swiper-pagination-bullet::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--page-text);
+  border-radius: 50%;
+  -webkit-transition: width 0.1s linear, height 0.1s linear, background-color 0.1s linear;
+  -moz-transition: width 0.1s linear, height 0.1s linear, background-color 0.1s linear;
+  -ms-transition: width 0.1s linear, height 0.1s linear, background-color 0.1s linear;
+  -o-transition: width 0.1s linear, height 0.1s linear, background-color 0.1s linear;
+  transition: width 0.1s linear, height 0.1s linear, background-color 0.1s linear;
 }
 
 /* end team */
