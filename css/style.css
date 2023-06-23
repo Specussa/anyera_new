@@ -464,7 +464,7 @@ svg path {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: 7px;
   -webkit-transition: height 0.3s linear;
   -moz-transition: height 0.3s linear;
   -ms-transition: height 0.3s linear;
