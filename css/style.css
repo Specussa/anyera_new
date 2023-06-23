@@ -5441,6 +5441,53 @@ html.has-scroll-dragging {
   margin-right: -1px;
 }
 
+.team__name, .team__head, .team__desc, .team__button {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+  -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -moz-transition: -moz-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -ms-transition: -ms-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -o-transition: -o-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  transition: transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+}
+
+.loaded .team__item.animate .team__name, .loaded .team__item.animate .team__head, .loaded .team__item.animate .team__desc,  .loaded .team__item.animate .team__button {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.loaded .team__item.animate .team__head {
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.loaded .team__item.animate .team__desc {
+  -webkit-transition-delay: 0.6s;
+  -moz-transition-delay: 0.6s;
+  -ms-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+.loaded .team__item.animate .team__button {
+  -webkit-transition-delay: 0.9s, 0.9s, 0s;
+  -moz-transition-delay: 0.9s, 0.9s, 0s;
+  -ms-transition-delay: 0.9s, 0.9s, 0s;
+  -o-transition-delay: 0.9s, 0.9s, 0s;
+  transition-delay: 0.9s, 0.9s, 0s;
+}
+
 .team__works {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5475,6 +5522,37 @@ html.has-scroll-dragging {
   font-weight: 300;
   line-height: 19px;
   color: var(--page-text);
+}
+
+.team__works_head, .team__works_desc {
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+  -webkit-transition: -webkit-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -moz-transition: -moz-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -ms-transition: -ms-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  -o-transition: -o-transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+  transition: transform 0.3s linear, opacity 0.3s linear, border-color 0.3s linear;
+}
+
+.loaded .team__works_item.animate .team__works_head, .loaded .team__works_item.animate .team__works_desc {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.loaded .team__works_item.animate .team__works_desc {
+  -webkit-transition-delay: 0.3s;
+  -moz-transition-delay: 0.3s;
+  -ms-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .team__slider {

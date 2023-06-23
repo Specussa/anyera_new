@@ -1369,7 +1369,8 @@ if(!public){} else {
 }
 
 let team = document.querySelector('.team');
-let teamsublist = document.querySelectorAll('.team__item');
+let teamitem = document.querySelectorAll('.team__item');
+let teamwitem = document.querySelectorAll('.team__works_item');
 if(!team){} else {
   let teamd = document.querySelectorAll('.team');
   function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {
@@ -1385,7 +1386,11 @@ if(!team){} else {
 
   let teamopt = {threshold: [0.5]};
   let teamserv = new IntersectionObserver(onEntry, teamopt);
-  for (let elm of teamsublist) {teamserv.observe(elm);}
+  for (let elm of teamitem) {teamserv.observe(elm);}
+
+  let teamwopt = {threshold: [0.5]};
+  let teamwserv = new IntersectionObserver(onEntry, teamwopt);
+  for (let elm of teamwitem) {teamserv.observe(elm);}
 }
 
 let breadcrumb = document.querySelector('.breadcrumbs__item');
