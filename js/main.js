@@ -700,8 +700,16 @@ if(!elsliderpublic){} else {
     autoplay: false,
     init: false,
     slidesPerView: 3,
+    slidesPerGroup: 3,
     spaceBetween: 0,
     effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 0,
+      slideShadows : false,
+    },
     grabCursor: true,
     parallax: true,
     navigation: {
@@ -742,6 +750,13 @@ if(!elsliderteam){} else {
     slidesPerView: 1,
     spaceBetween: 0,
     effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 0,
+      slideShadows : false,
+    },
     autoplay: {
       delay: 7000,
       disableOnInteraction: false,
@@ -1325,13 +1340,19 @@ let publicitem = document.querySelectorAll('.public__item');
 let publictags = document.querySelectorAll('.public__tags');
 if(!public){} else {
   let publicd = document.querySelectorAll('.public');
-  function onEntry(entry) {entry.forEach(change => {if (change.isIntersecting) {
-    change.target.classList.add('animate');
-    for (var i = 0; i < eldots.length; i++) {
-      eldots[i].classList.remove('active');
-      document.getElementById('public__dots').classList.add('active');
+  function onEntry(entry) {
+    entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('animate');
+      for (var i = 0; i < eldots.length; i++) {
+        eldots[i].classList.remove('active');
+        document.getElementById('public__dots').classList.add('active');
+      }
+    } else {
+      change.target.classList.remove('animate');
     }
-  }});};
+    });
+  }
   let publicdopt = {threshold: [0]};
   let publicdserv = new IntersectionObserver(onEntry, publicdopt);
   for (let elm of publicd) {publicdserv.observe(elm);}
