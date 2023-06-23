@@ -464,7 +464,7 @@ svg path {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  height: 7px;
+  height: 3px;
   -webkit-transition: height 0.3s linear;
   -moz-transition: height 0.3s linear;
   -ms-transition: height 0.3s linear;
@@ -475,7 +475,7 @@ svg path {
 
 .header__progress_bar {
   width: 0%;
-  background: linear-gradient(90deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.1));
+  background: var(--purple);
   -ms-flex: 0;
   flex: 0;
   -ms-flex-preferred-size: 0%;
