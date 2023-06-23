@@ -766,9 +766,11 @@ if(!elsliderteam){} else {
       modifier: 0, // Effect multipler
       slideShadows : false, // Enables slides shadows
     },
-    autoStart: true,
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
     speed: 700,
-    pause: 7000,
     grabCursor: true,
     parallax: true,
     pagination: {
