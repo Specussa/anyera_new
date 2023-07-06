@@ -225,6 +225,11 @@ svg path {
 
 .button__project svg path {
   stroke: var(--page-text);
+  -webkit-transition: stroke 0.3s linear;
+  -moz-transition: stroke 0.3s linear;
+  -ms-transition: stroke 0.3s linear;
+  -o-transition: stroke 0.3s linear;
+  transition: stroke 0.3s linear;
 }
 
 .button__project_input {
